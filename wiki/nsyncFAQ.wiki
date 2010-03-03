@@ -6,6 +6,7 @@
 
   * Windows XP, Vista, 7
   * Microsoft .NET framework 3.5 SP1 (Installed with nsync)
+  * Microsoft Sync Framework 2.0 (Installed with nsync)
 
 = Who is nsync for? =
 
