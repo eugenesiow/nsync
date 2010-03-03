@@ -1,5 +1,7 @@
 #summary Feature list for nsync
 
+<wiki:toc max_depth="1" />
+
 = Synchronization =
   * 2-way synchronization (Sync two folders)
   * Update functionality (update both folders with the latest versions of documents and files)
@@ -8,5 +10,5 @@
 = Easy to use, Intuitive, fast and attractive interface =
 
   * Regular folder browsing where you click and select the source/destination folder.
-  * Apart from the regular folder browsing, nsync also comes with a Drag and Drop feature (Folders can be dragged from anywhere in Windows into nsync and it is capable of recognizing them) [Refer to 6.2 for UI interface]
+  * Apart from the regular folder browsing, nsync also comes with a Drag and Drop feature (Folders can be dragged from anywhere in Windows into nsync and it is capable of recognizing them)
   * To minimise the untidiness and make the interface look smooth and clean, nsync automatically displays the sync button only when both source and destination folders have been chosen.
