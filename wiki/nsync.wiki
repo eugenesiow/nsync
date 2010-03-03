@@ -24,3 +24,7 @@ nsync allows the synchronization of your data between desktop PCs, laptops, USB 
 = Features =
 
 See [nsyncFeatures nsync Features].
+
+= Frequently Asked Questions =
+
+See [nsyncFAQ nsync FAQ].
