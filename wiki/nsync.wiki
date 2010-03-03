@@ -23,4 +23,4 @@ nsync allows the synchronization of your data between desktop PCs, laptops, USB 
 
 = Features =
 
-nsyncFeatures
+[nsyncFeatures]
