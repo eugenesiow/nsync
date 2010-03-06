@@ -29,3 +29,7 @@ See [nsyncFeatures nsync Features].
 = Frequently Asked Questions =
 
 See [nsyncFAQ nsync FAQ].
+
+= Developer Guide =
+
+See [DeveloperGuide Developer Guide].
