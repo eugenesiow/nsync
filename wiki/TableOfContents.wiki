@@ -2,5 +2,5 @@
   * [nsync nsync] 
     * [nsyncFeatures Features] 
     * [nsyncFAQ FAQ] 
-    * [DeveloperGuide Developer Guide] 
-      * [CodingGuidelines Coding Guidelines]
+  * [DeveloperGuide Developer Guide] 
+    * [CodingGuidelines Coding Guidelines]
