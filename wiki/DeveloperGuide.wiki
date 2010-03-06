@@ -1,0 +1,11 @@
+#summary Developer Guide
+
+<wiki:toc max_depth="1" />
+
+= Introduction =
+
+This guide/manual is for developers who want to dive into the source code of nsync.
+
+= Coding Guidelines =
+
+See [CodingGuidelines Coding Guidelines].
