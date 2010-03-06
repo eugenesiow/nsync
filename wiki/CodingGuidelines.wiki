@@ -1,0 +1,8 @@
+#summary Coding Practices and Guidelines
+
+<wiki:toc max_depth="1" />
+
+= Methods =
+
+Naming
+  * Use Pascal casing. E.g. SaveFolderPaths()
