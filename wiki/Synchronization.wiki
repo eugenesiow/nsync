@@ -4,12 +4,18 @@
 
 = Introduction =
 
-Add your content here.
+Data synchronization is the process of establishing consistency among data from a source to a target data storage and vice versa and the continuous harmonization of the data over time. This includes file and folder synchronization which [nsync] provides.
 
+Folder synchronization helps keep 2 folders, usually across media, updated and current. If you change files in one folder, synchronization helps replicate this change at the other folder.
 
-= Details =
+= Why would you need it? =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== Mobile work across multiple devices ==
+
+It is particularly useful for mobile workers, or others that work on multiple computers. It is possible to synchronize multiple locations by synchronizing them a pair at a time.
+
+Let's say i have a 'School' or 'Work' folder on my desktop and another on my laptop. Sometimes I work on my laptop when I'm on the go, sometimes I work on my desktop, when i'm in the comfort of my home (I like the larger monitor). How do I keep both folders current and updated with my latest changes? Synchronization is the way to go!
+
+== Keeping backups ==
+
+File synchronization is also commonly used for home backups on external hard drives. When I want to backup my Documents folder on my hard drive and don't want to have to copy and paste the whole folder, and be asked everytime there is an overwrite operation, I'd use a file synchronization software to keep them mirrored and current!
