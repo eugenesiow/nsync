@@ -32,7 +32,7 @@ nsync provides something called 2-way synchronization meaning that updated files
   * When i create a new file in folder A, it is copied to folder B too
   * When i update a file in folder A, it is updated in folder B (replaced)
 
-= Conflicts =
+== Conflicts ==
 
 What happens when I update files in both my folders?
 
