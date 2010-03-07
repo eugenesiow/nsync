@@ -4,3 +4,4 @@
     * [nsyncFAQ FAQ] 
   * [DeveloperGuide Developer Guide] 
     * [CodingGuidelines Coding Guidelines]
+  * [Synchronization]
