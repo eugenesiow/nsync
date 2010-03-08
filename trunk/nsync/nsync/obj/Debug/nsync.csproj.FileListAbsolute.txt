@@ -381,3 +381,5 @@ C:\Users\AdminNUS\Desktop\nsync[check]\nsync\nsync\obj\Debug\nsync.exe
 C:\Users\AdminNUS\Desktop\nsync[check]\nsync\nsync\obj\Debug\nsync.pdb
 C:\Users\AdminNUS\Desktop\nsync[something]\nsync\nsync\obj\Debug\nsync.exe
 C:\Users\AdminNUS\Desktop\nsync[something]\nsync\nsync\obj\Debug\nsync.pdb
+C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\obj\Debug\nsync.exe
+C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\obj\Debug\nsync.pdb
