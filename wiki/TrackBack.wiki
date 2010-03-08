@@ -4,7 +4,6 @@
 
 TrackBack is a feature in nsync that ensures you are able to recover your directories to pre-sync state. It ensures that you never(unless there's a natural disaster of course) lose any files! If reliability is what you want, TrackBack seeks to provide this.
 
-= How TrackBack works =
+= How !TrackBack works =
 
   # You synchronize 2 folders. 
-
