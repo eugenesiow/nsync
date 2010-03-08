@@ -33,6 +33,7 @@ namespace nsync
             //Note2
             //Note3
             //Note4
+            //Norman
             InitializeComponent();
         }
 
