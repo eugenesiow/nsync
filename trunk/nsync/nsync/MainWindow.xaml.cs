@@ -29,11 +29,6 @@ namespace nsync
 
         public MainWindow()
         {
-            //Note1
-            //Note2
-            //Note3
-            //Note4
-            //Norman
             InitializeComponent();
         }
 
