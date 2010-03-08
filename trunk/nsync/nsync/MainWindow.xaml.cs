@@ -30,6 +30,7 @@ namespace nsync
         public MainWindow()
         {
             //Note1
+            //Note2
             InitializeComponent();
         }
 
