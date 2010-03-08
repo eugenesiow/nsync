@@ -379,3 +379,5 @@ C:\Documents and Settings\yeojw\Desktop\nsync_060310\nsync_060310\nsync\nsync\ob
 C:\Documents and Settings\yeojw\Desktop\nsync_060310\nsync_060310\nsync\nsync\obj\Debug\nsync.application
 C:\Users\AdminNUS\Desktop\nsync[check]\nsync\nsync\obj\Debug\nsync.exe
 C:\Users\AdminNUS\Desktop\nsync[check]\nsync\nsync\obj\Debug\nsync.pdb
+C:\Users\AdminNUS\Desktop\nsync[something]\nsync\nsync\obj\Debug\nsync.exe
+C:\Users\AdminNUS\Desktop\nsync[something]\nsync\nsync\obj\Debug\nsync.pdb
