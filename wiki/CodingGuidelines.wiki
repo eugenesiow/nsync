@@ -29,8 +29,8 @@
 = Interface =
 ----
 *Naming*
-  * Use Pascal casing.<br>_E.g. public interface IRegistration_
-  * Prefix with I in front of naming.
+  * Use Pascal casing.
+  * Prefix with I in front of naming.<br>_E.g. public interface IRegistration_
 
 = Methods =
 ----
