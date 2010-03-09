@@ -7,7 +7,7 @@ For the conflict resolution is kinda long so here's the link
 
 = Details =
 ----
-For First Time
+*For First Time*
 
 -- Start off by downloading Tortoise SVN. I believe the current version is 1.6.7.
 
@@ -22,7 +22,7 @@ For First Time
 -- Click on 'ok' and the program will download the current Revision into that folder.
 
 ----
-Subsequent Use
+*Subsequent Use*
 
 -- Each time you edit something in that folder, you will see an red exclamation mark, when you commit the folder, you will see a green tick. 
 
