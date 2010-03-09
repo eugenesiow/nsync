@@ -4,5 +4,5 @@
     * [nsyncFAQ FAQ] 
   * [DeveloperGuide Developer Guide] 
     * [CodingGuidelines Coding Guidelines]
+    * [TortoiseSVN]
   * [Synchronization]
-  * [TortoiseSVN]
