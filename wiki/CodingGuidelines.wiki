@@ -9,7 +9,7 @@
 || Camel case || The first letter of an identifier is lowercase and the first letter of each subsequent concatenated word is capitalized.<br>_Example: backColor_ ||        
 || Hungarian notation || Hungarian notation is a naming convention in computer programming, in which the name of a variable indicates its type or intended use. In other words, it is the practice of including a prefix in identifiers to encode some metadata about the parameter, such as the data type of the identifier.<br>_Example: strBackColor (backColor is string type)_ ||
 
-==Naming==
+*Naming*
   * Use abbreviations only when needed.
   * Do not use underscores. Except in constants.
   * Do not use acronyms that are not generally accepted in the computing field. Where appropriate, use well-known acronyms to replace lengthy phrase names. 
@@ -26,21 +26,21 @@ that would already make the code fairly readable.
 
 = Class =
 ----
-==Naming==
+*Naming*
   * Use Pascal casing. E.g. public class StudentRegistration
 
 = Interface =
 ----
-==Naming==
+*Naming*
   * Use Pascal casing. E.g. public interface IRegistration
   * Prefix with I in front of naming.
 
 = Methods =
 ----
-==Naming==
+*Naming*
   * Use Pascal casing. E.g. SaveFolderPaths()
 
 = Parameter =
 ----
-==Naming==
+*Naming*
   * Use Camel casing. E.g. string studentName
