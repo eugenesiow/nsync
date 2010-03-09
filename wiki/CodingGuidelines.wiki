@@ -24,20 +24,20 @@
 = Class =
 ----
 *Naming*
-  * Use Pascal casing. E.g. public class StudentRegistration
+  * Use Pascal casing.<br>_E.g. public class StudentRegistration_
 
 = Interface =
 ----
 *Naming*
-  * Use Pascal casing. E.g. public interface IRegistration
+  * Use Pascal casing.<br>_E.g. public interface IRegistration_
   * Prefix with I in front of naming.
 
 = Methods =
 ----
 *Naming*
-  * Use Pascal casing. E.g. SaveFolderPaths()
+  * Use Pascal casing.<br>_E.g. SaveFolderPaths()_
 
 = Parameter =
 ----
 *Naming*
-  * Use Camel casing. E.g. string studentName
+  * Use Camel casing.<br>_E.g. string studentName_
