@@ -3,6 +3,7 @@
 <wiki:toc max_depth="1" />
 
 = General Guidelines =
+----
 || *Term* || *Description* ||
 || Pascal case || The first letter in the identifier and the first letter of each subsequent concatenated word are capitalized. You can use Pascal case for identifiers of three or more characters.<br>_Example: BackColor_ ||
 || Camel case || The first letter of an identifier is lowercase and the first letter of each subsequent concatenated word is capitalized.<br>_Example: backColor_ ||        
@@ -24,22 +25,22 @@ little comments. If all variables and method names are meaningful,
 that would already make the code fairly readable. 
 
 = Class =
-
+----
 Naming
   * Use Pascal casing. E.g. public class StudentRegistration
 
 = Interface =
-
+----
 Naming
   * Use Pascal casing. E.g. public interface IRegistration
   * Prefix with I in front of naming.
 
 = Methods =
-
+----
 Naming
   * Use Pascal casing. E.g. SaveFolderPaths()
 
 = Parameter =
-
+----
 Naming
   * Use Camel casing. E.g. string studentName
