@@ -5,4 +5,4 @@
   * [DeveloperGuide Developer Guide] 
     * [CodingGuidelines Coding Guidelines]
     * [TortoiseSVN]
-  * [Synchronization]
+  * [Synchronization Synchronization 101]
