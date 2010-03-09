@@ -16,6 +16,13 @@ Naming
   * Do not use namings that differ by only casing. 
     E.g. namespace ee.cummings; namespace Ee.Cummings;
 
+Other
+  * If you need to hard code a value/string, declare them as constants. 
+  * Method name should explain what it does. Do not use misleading names. 
+  * Write comments wherever required. Good readable code will require very 
+little comments. If all variables and method names are meaningful, 
+that would already make the code fairly readable. 
+
 = Class =
 
 Naming
