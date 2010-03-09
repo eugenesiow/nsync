@@ -13,8 +13,8 @@
   * Use abbreviations only when needed.
   * Do not use underscores. Except in constants.
   * Do not use acronyms that are not generally accepted in the computing field. Where appropriate, use well-known acronyms to replace lengthy phrase names.<br>_E.g. use “OnButtonClick” instead of “OnBtnClick”._
-  * Do not use namings that differ by only casing.<br>_E.g. {{{namespace ee.cummings; namespace Ee.Cummings;}}}_
-  * Do not use Hungarian notation for naming properties and fields<br>_E.g. {{{string strBackColor}}}_
+  * Do not use namings that differ by only casing.<br>_E.g. namespace ee.cummings; namespace Ee.Cummings;_
+  * Do not use Hungarian notation for naming properties and fields<br>_E.g. string strBackColor_
 
 *Other Pointers*
   * If you need to hard code a value/string, declare them as constants. 
@@ -24,20 +24,20 @@
 = Class =
 ----
 *Naming*
-  * Use Pascal casing.<br>_E.g. {{{public class StudentRegistration}}}_
+  * Use Pascal casing.<br>_E.g. public class StudentRegistration_
 
 = Interface =
 ----
 *Naming*
   * Use Pascal casing.
-  * Prefix with I in front of naming.<br>_E.g. {{{public interface IRegistration}}}_
+  * Prefix with I in front of naming.<br>_E.g. public interface IRegistration_
 
 = Methods =
 ----
 *Naming*
-  * Use Pascal casing.<br>_E.g. {{{SaveFolderPaths()}}}_
+  * Use Pascal casing.<br>_E.g. SaveFolderPaths()_
 
 = Parameter =
 ----
 *Naming*
-  * Use Camel casing.<br>_E.g. {{{string studentName}}}_
+  * Use Camel casing.<br>_E.g. string studentName_
