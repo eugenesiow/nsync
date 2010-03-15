@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Xml;
 using System.IO;
+using System.Security.AccessControl;
 
 namespace nsync
 {
@@ -149,7 +150,9 @@ namespace nsync
                 doc.Load(settingsFile);
                 root = doc.DocumentElement;
             }
-            
+
+            File.SetAttributes(settingsFile, FileAttributes.Normal);
+
             XmlNode node = root.SelectSingleNode(path);
             return node;
         }
