@@ -194,46 +194,49 @@
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:MainWindow.xaml.cs" caret="5195" fromTop="154" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackPage.xaml.cs" caret="0" fromTop="0" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackData.cs" caret="461" fromTop="0" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackEngine.cs" caret="3504" fromTop="15" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HelperManager.cs" caret="477" fromTop="18" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TestEngine.cs" caret="0" fromTop="0" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TestEngine.Designer.cs" caret="0" fromTop="0" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:Intelligence.cs" caret="435" fromTop="20" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml" caret="5216" fromTop="2" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="23711" fromTop="1" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="14577" fromTop="112" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/d:Properties/f:AssemblyInfo.cs" caret="0" fromTop="0" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/d:Properties/f:Settings.Designer.cs" caret="0" fromTop="0" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/d:Properties/f:Resources.Designer.cs" caret="0" fromTop="0" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackEngine.cs" caret="0" fromTop="0" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TestEngine.Designer.cs" caret="0" fromTop="0" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="3277" fromTop="7" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="478" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackEngine.cs" caret="2831" fromTop="11" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackEngine.cs" caret="3433" fromTop="21" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:TrackBackEngine.cs" caret="809" fromTop="12" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="805" fromTop="21" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="6693" fromTop="13" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="9104" fromTop="14" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4298" fromTop="9" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="13303" fromTop="11" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="8958" fromTop="13" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4529" fromTop="8" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4755" fromTop="13" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="6493" fromTop="14" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="5902" fromTop="4" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="552" fromTop="14" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="12566" fromTop="2" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="12349" fromTop="16" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="9414" fromTop="11" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="1635" fromTop="16" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="3381" fromTop="15" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="29469" fromTop="20" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="24215" fromTop="10" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="821" fromTop="21" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="6757" fromTop="13" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="9168" fromTop="14" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4362" fromTop="9" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="13374" fromTop="11" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="9022" fromTop="13" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4593" fromTop="8" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="4819" fromTop="13" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="6557" fromTop="14" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="5966" fromTop="4" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="12637" fromTop="2" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="12420" fromTop="16" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="9485" fromTop="11" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="1699" fromTop="16" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="3531" fromTop="15" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="29492" fromTop="20" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="24238" fromTop="10" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml" caret="0" fromTop="0" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="23990" fromTop="15" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="29205" fromTop="13" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="28473" fromTop="19" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="24013" fromTop="15" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="29228" fromTop="13" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="28496" fromTop="19" />
       <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml" caret="5216" fromTop="2" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="27735" fromTop="10" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="27504" fromTop="14" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="23947" fromTop="10" />
-      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="28745" fromTop="7" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="27758" fromTop="10" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="27527" fromTop="14" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="23970" fromTop="10" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:HomePage.xaml.cs" caret="28768" fromTop="7" />
+      <File id="C419DF3E-CE4E-4A6C-A6F9-7BCFF849E34C/f:SyncEngine.cs" caret="469" fromTop="13" />
     </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>

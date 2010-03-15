@@ -13,8 +13,8 @@ namespace nsync
 {
     class SyncEngine
     {
-        public System.ComponentModel.BackgroundWorker backgroundWorker;
-        public System.ComponentModel.BackgroundWorker backgroundWorker2;
+        public System.ComponentModel.BackgroundWorker backgroundWorkerForSync;
+        public System.ComponentModel.BackgroundWorker backgroundWorkerForPreSync;
         private ulong freeDiskSpaceForLeft = 0;
         private ulong freeDiskSpaceForRight = 0;
         private ulong diskSpaceNeededForLeft = 0;
@@ -33,13 +33,13 @@ namespace nsync
         {
             // Set up the BackgroundWorker object by 
             // attaching event handlers.
-            backgroundWorker = new System.ComponentModel.BackgroundWorker();
-            backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
-            backgroundWorker.WorkerReportsProgress = true;
+            backgroundWorkerForSync = new System.ComponentModel.BackgroundWorker();
+            backgroundWorkerForSync.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
+            backgroundWorkerForSync.WorkerReportsProgress = true;
 
-            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            backgroundWorker2.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
-            backgroundWorker2.WorkerReportsProgress = true;
+            backgroundWorkerForPreSync = new System.ComponentModel.BackgroundWorker();
+            backgroundWorkerForPreSync.DoWork += new DoWorkEventHandler(backgroundWorker2_DoWork);
+            backgroundWorkerForPreSync.WorkerReportsProgress = true;
 
             // Create the intelligence manager
             intelligentManager = new Intelligence();
@@ -213,7 +213,7 @@ namespace nsync
             
             countDoneChanges++;
             // This method will raise an event to the backgroundWorker via backgroundWorker_ProgressChanged
-            backgroundWorker.ReportProgress((int)((double)countDoneChanges / countChanges * 100));
+            backgroundWorkerForSync.ReportProgress((int)((double)countDoneChanges / countChanges * 100));
 
             /*
             switch (args.ChangeType)
@@ -347,7 +347,7 @@ namespace nsync
         /// </summary>
         public void PreSync()
         {
-            backgroundWorker2.RunWorkerAsync();
+            backgroundWorkerForPreSync.RunWorkerAsync();
         }
         
         /// <summary>
@@ -404,7 +404,7 @@ namespace nsync
         public void StartSync()
         {
             // Start the asynchronous operation.
-            backgroundWorker.RunWorkerAsync();
+            backgroundWorkerForSync.RunWorkerAsync();
         }
 
         /// <summary>
