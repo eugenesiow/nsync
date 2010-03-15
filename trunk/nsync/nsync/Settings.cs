@@ -13,6 +13,10 @@ namespace nsync
         private string settingsFile = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + nsync.Properties.Resources.settingsFilePath;
         private string NULL_STRING = nsync.Properties.Resources.nullString;
 
+        private const int NUMBER_OF_MOST_RECENT = 5;
+        private const string PATH_SETTINGS = "/nsync/SETTINGS";
+        private const string PATH_MRU = "/nsync/MRU";
+
         private static readonly Settings instance = new Settings();
 
         private Settings() {}
@@ -33,9 +37,7 @@ namespace nsync
             }
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(settingsFile);
-            XmlElement root = doc.DocumentElement;
-            XmlNode helperWindowStatusNode = root.SelectSingleNode("//SETTINGS//HelperWindowIsOn");
+            XmlNode helperWindowStatusNode = SelectNode(doc, PATH_SETTINGS+"/HelperWindowIsOn");
 
             helperWindowStatusNode.InnerText = "" + status;
 
@@ -51,9 +53,7 @@ namespace nsync
             }
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(settingsFile);
-            XmlElement root = doc.DocumentElement;
-            XmlNode helperWindowStatusNode = root.SelectSingleNode("//SETTINGS//HelperWindowIsOn");
+            XmlNode helperWindowStatusNode = SelectNode(doc, PATH_SETTINGS+"/HelperWindowIsOn");
 
             return Boolean.Parse(helperWindowStatusNode.InnerText);
         }
@@ -64,11 +64,8 @@ namespace nsync
             if (File.Exists(settingsFile))
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(settingsFile);
-                XmlElement root = doc.DocumentElement;
-
                 //Load MRU Information
-                XmlNode mruNode = root.SelectSingleNode("//MRU");
+                XmlNode mruNode = SelectNode(doc, PATH_MRU);
 
                 for (int i = 1; i <= 5; i++)
                 {
@@ -95,11 +92,9 @@ namespace nsync
                 CreateNewSettingsXML();
             }
                 XmlDocument doc = new XmlDocument();
-                doc.Load(settingsFile);
-                XmlElement root = doc.DocumentElement;
-                XmlNode mruNode = root.SelectSingleNode("//MRU");
+                XmlNode mruNode = SelectNode(doc, PATH_MRU);
 
-                for (int i = 1; i <= 5; i++)
+                for (int i = 1; i <= NUMBER_OF_MOST_RECENT; i++)
                 {
                     tempStorage[counter++] = mruNode["left" + i.ToString()].InnerText;
                     tempStorage[counter++] = mruNode["right" + i.ToString()].InnerText;
@@ -118,7 +113,7 @@ namespace nsync
                 }
 
                 counter = 0;
-                for (int i = 2; i <= 5; i++)
+                for (int i = 2; i <= NUMBER_OF_MOST_RECENT; i++)
                 {
                     while (tempStorage[counter] == "REPLACED" && tempStorage[counter + 1] == "REPLACED")
                         counter += 2;
@@ -130,6 +125,49 @@ namespace nsync
                 }
 
                 doc.Save(settingsFile);
+        }
+
+        private XmlNode SelectNode(XmlDocument doc, string path)
+        {
+            try
+            {
+                doc.Load(settingsFile);
+            }
+            catch (XmlException)
+            {
+                File.Delete(settingsFile);
+                CreateNewSettingsXML();
+                doc.Load(settingsFile);
+            }
+
+            XmlElement root = doc.DocumentElement;
+            
+            if (!CheckSettingsXML(doc))
+            {
+                File.Delete(settingsFile);
+                CreateNewSettingsXML();
+                doc.Load(settingsFile);
+                root = doc.DocumentElement;
+            }
+            
+            XmlNode node = root.SelectSingleNode(path);
+            return node;
+        }
+
+        private bool CheckSettingsXML(XmlDocument doc)
+        {
+            if (null == doc.SelectSingleNode(PATH_SETTINGS+"/HelperWindowIsOn"))
+                return false;
+
+            for (int i = 1; i <= NUMBER_OF_MOST_RECENT; i++)
+            {
+                if (null == doc.SelectSingleNode(PATH_MRU+"/left" + i.ToString()))
+                    return false;
+                if (null == doc.SelectSingleNode(PATH_MRU+"/right" + i.ToString()))
+                    return false;
+            }
+            
+            return true;
         }
 
         private void CreateNewSettingsXML()
