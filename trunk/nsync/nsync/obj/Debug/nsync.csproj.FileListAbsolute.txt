@@ -849,3 +849,5 @@ C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\bin\Debug
 C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\bin\Debug\nsync.pdb
 C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\obj\Debug\nsync.exe.manifest
 C:\Documents and Settings\Paralleluni\Desktop\nsync[Check]\nsync\nsync\obj\Debug\nsync.application
+C:\Users\Seah Shao Qi\Desktop\Latest\nsync\nsync\obj\Debug\nsync.exe
+C:\Users\Seah Shao Qi\Desktop\Latest\nsync\nsync\obj\Debug\nsync.pdb

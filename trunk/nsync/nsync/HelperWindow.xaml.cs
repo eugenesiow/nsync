@@ -24,11 +24,17 @@ namespace nsync
         private windowStartPosition windowPostionType;
         private bool windowActive;
 
+        /// <summary>
+        /// A list of enumeration of the available positions for notification window
+        /// </summary>
         public enum windowStartPosition
         {
             topLeft, topRight, bottomLeft, bottomRight, center, windowTop
         };
 
+        /// <summary>
+        /// Constructor for HelperWindow class
+        /// </summary>
         public HelperWindow()
         {
             InitializeComponent();
@@ -37,6 +43,12 @@ namespace nsync
 
         #region User Defined Functions
 
+        /// <summary>
+        /// Set the settings for notification window
+        /// </summary>
+        /// <param name="helpText">This is the string to be displayed</param>
+        /// <param name="helpDuration">Duration for which the notification window should be active</param>
+        /// <param name="windowPosition">The position where notification window should be displayed</param>
         public void SetSettings(string helpText, int helpDuration, windowStartPosition windowPosition)
         {
             windowActive = true;
@@ -73,12 +85,18 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// Get the state of the notification window
+        /// </summary>
         public bool WindowActiveState
         {
             get { return windowActive; }
             set { windowActive = value; }
         }
 
+        /// <summary>
+        /// Move the notification window accordingly when its position is changed
+        /// </summary>
         public void MoveWindow()
         {
             if (windowPostionType == windowStartPosition.windowTop)
@@ -103,6 +121,9 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// Close the notification window
+        /// </summary>
         private void CloseWindow()
         {
             if (windowActive == true)
@@ -112,6 +133,9 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// Setup the settings for timer of notification window
+        /// </summary>
         private void SetTime()
         {
             dispatcherTimer = new DispatcherTimer();
@@ -121,6 +145,11 @@ namespace nsync
 
         #endregion
 
+        /// <summary>
+        /// This method is called to start the timer and will close the notification window when time is up
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             Application.Current.MainWindow.Focus();
@@ -134,11 +163,22 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when a right mouse click is done on the notification window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void windowHelper_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
             CloseWindow();
         }
 
+        /// <summary>
+        /// This method is called when the notification window has finished fading out
+        /// <para>Notifcation window will be hidden after this</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormFadeOut_Completed(object sender, EventArgs e)
         {
             if (!windowActive)
@@ -148,6 +188,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the close button on the notification window is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             CloseWindow();

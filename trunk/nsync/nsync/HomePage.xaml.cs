@@ -45,7 +45,9 @@ namespace nsync
         private string ICON_LINK_FOLDER = nsync.Properties.Resources.folderIconPath;
         private string ICON_LINK_FOLDER_MISSING = nsync.Properties.Resources.folderMissingIconPath;
 
-
+        /// <summary>
+        /// Constructor for HomePage class
+        /// </summary>
         public HomePage()
         {
             InitializeComponent();
@@ -58,6 +60,11 @@ namespace nsync
             mainWindow.Closing += new CancelEventHandler(mainWindow_Closing);
         }
 
+        /// <summary>
+        /// This method will be called when HomePage is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             //Create blank opacity mask
@@ -91,23 +98,42 @@ namespace nsync
             mainWindow.LocationChanged += new EventHandler(mainWindow_LocationChanged);
         }
 
+        /// <summary>
+        /// This method will be called when the position of mainWindow is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void mainWindow_LocationChanged(object sender, EventArgs e)
         {
             helper.UpdateMove(); 
         }
 
-        // Before program is closed, save the last folder paths
+        /// <summary>
+        /// This method is called when HomePage is unloaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Page_Unloaded(object sender, RoutedEventArgs e)
         {
             SaveFolderPaths();
             helper.CloseWindow();
         }
 
+        /// <summary>
+        /// This method is called when nsync is exited
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void mainWindow_Closing(object sender, CancelEventArgs e)
         {
             SaveFolderPaths();
         }
 
+        /// <summary>
+        /// This method is called when user drag and drop something into the left box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxLeft_Drop(object sender, DragEventArgs e)
         {
             hasLeftPath = true;
@@ -115,6 +141,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// This method is called when user drag and drop something into the right box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxRight_Drop(object sender, DragEventArgs e)
         {
             hasRightPath = true;
@@ -122,6 +153,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// This method is called when user drag, but did not drop, something into the left box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxLeft_DragEnter(object sender, DragEventArgs e)
         {
             previousImageLeft = LeftIcon.Source;
@@ -149,6 +185,11 @@ namespace nsync
             ShowRemovableDrives(LeftText.Text, "left");
         }
 
+        /// <summary>
+        /// This method is called when user drag, but did not drop, something into the right box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxRight_DragEnter(object sender, DragEventArgs e)
         {
             previousImageRight = RightIcon.Source;
@@ -176,6 +217,11 @@ namespace nsync
             ShowRemovableDrives(RightText.Text, "right");
         }
 
+        /// <summary>
+        /// This method is called when user drag, but did not drop, and instead drag out of the right box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxRight_DragLeave(object sender, DragEventArgs e)
         {
             RightText.Text = previousTextRight;
@@ -183,6 +229,11 @@ namespace nsync
             RightIcon.Source = previousImageRight;
         }
 
+        /// <summary>
+        /// This method is called when user drag, but did not drop, and instead drag out of the left box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxLeft_DragLeave(object sender, DragEventArgs e)
         {
             LeftText.Text = previousTextLeft;
@@ -190,6 +241,11 @@ namespace nsync
             LeftIcon.Source = previousImageLeft;
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the left box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LeftIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string currentPath = NULL_STRING;
@@ -210,6 +266,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the right box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RightIcon_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string currentPath = NULL_STRING;
@@ -228,6 +289,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer enters leftbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxLeft_MouseEnter(object sender, MouseEventArgs e)
         {
             if (BarMRULeft.IsEnabled == true)
@@ -237,6 +303,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer leaves leftbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxLeft_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!LeftListBox.IsVisible)
@@ -246,6 +317,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer enters left MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRULeft_MouseEnter(object sender, MouseEventArgs e)
         {
             
@@ -256,6 +332,11 @@ namespace nsync
             
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer leaves left MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRULeft_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!LeftListBox.IsVisible)
@@ -266,6 +347,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer leaves rightbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxRight_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!RightListBox.IsVisible)
@@ -275,6 +361,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer enters rightbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BoxRight_MouseEnter(object sender, MouseEventArgs e)
         {
             if (BarMRURight.IsEnabled == true)
@@ -284,6 +375,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer enters right MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRURight_MouseEnter(object sender, MouseEventArgs e)
         {
             
@@ -294,6 +390,11 @@ namespace nsync
             
         }
 
+        /// <summary>
+        /// This method is called when the mouse pointer leaves right MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRURight_MouseLeave(object sender, MouseEventArgs e)
         {
             if (!RightListBox.IsVisible)
@@ -304,6 +405,11 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the right MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRURight_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (RightListBox.IsVisible)
@@ -319,6 +425,11 @@ namespace nsync
 
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the left MRU bar
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BarMRULeft_MouseUp(object sender, MouseButtonEventArgs e)
         {            
             if (LeftListBox.IsVisible)
@@ -335,6 +446,11 @@ namespace nsync
 
         #region User Defined Functions
 
+        /// <summary>
+        /// Change the leftbox/rightbox icon if folder path is a removeable drive
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="leftOrRight"></param>
         private void ShowRemovableDrives(string path, string leftOrRight)
         {
             if (synchronizer.CheckRemovableDrive(path))
@@ -351,7 +467,10 @@ namespace nsync
             }
         }
 
-        // Checks if folders exist
+        /// <summary>
+        /// Checks if folder paths exist
+        /// </summary>
+        /// <returns>Return a boolean to determine if folder paths exist</returns>
         private bool FolderCheck()
         {
             bool rightFolderExists = synchronizer.CheckFolderExists("right");
@@ -384,7 +503,10 @@ namespace nsync
             }
         }
 
-        // Checks if folders are similar
+        /// <summary>
+        /// Checks if folders are similar
+        /// </summary>
+        /// <returns>Return a boolean to determine if folder paths are similar</returns>
         private bool SimilarFolderCheck()
         {
             if (synchronizer.CheckSimilarFolder())
@@ -395,7 +517,10 @@ namespace nsync
             return false;
         }
 
-        // Checks if one folder is a subfolder of another
+        /// <summary>
+        /// Checks if one folder is a subfolder of another
+        /// </summary>
+        /// <returns>Return a boolean to determine if one folder is subfolder of another</returns>
         private bool SubFolderCheck()
         {
             if (!synchronizer.CheckSubFolder())
@@ -406,7 +531,10 @@ namespace nsync
             return true;
         }
 
-        // Checks if the sync button should appear
+        /// <summary>
+        /// Checks if the sync button should appear
+        /// </summary>
+        /// <returns>Return a boolean to determine if sync button should appear</returns>
         private bool ShowSync()
         {
             helper.HideWindow();
@@ -444,7 +572,9 @@ namespace nsync
             return true;
         }
 
-        // Save folder paths to settings.xml
+        /// <summary>
+        /// Saves folder paths to settings.xml
+        /// </summary>
         private void SaveFolderPaths()
         {
             // pass to settingsmanager the 2 current folderpaths, if any
@@ -454,6 +584,9 @@ namespace nsync
                 return;
         }
 
+        /// <summary>
+        /// Reload folder paths on MRU list
+        /// </summary>
         private void ReloadFolderPaths()
         {
             LeftListBox.Items.Clear();
@@ -461,7 +594,9 @@ namespace nsync
             LoadFolderPaths();
         }
 
-        // Load folder paths when program starts running
+        /// <summary>
+        /// Load folder paths from settings.xml
+        /// </summary>
         private void LoadFolderPaths()
         {
             List<string> folderPaths = settingsManager.LoadFolderPaths();
@@ -541,6 +676,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// Shorten folder path
+        /// </summary>
+        /// <param name="oldPath">The path that is to be shortened is passed in</param>
+        /// <returns>A string containing the new folder path is returned</returns>
         private string ShortenPath(string oldPath)
         {
             if (oldPath.Length > 40)
@@ -553,17 +693,31 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when mouse pointer leaves right listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void listBoxRight_MouseLeave(object sender, MouseEventArgs e)
         {
             LeftListBox.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// This method is called when mouse pointer leaves left listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void listBoxLeft_MouseLeave(object sender, MouseEventArgs e)
         {
             RightListBox.SelectedIndex = -1;
         }
 
-
+        /// <summary>
+        /// This method is called when mouse pointer enters left listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void listBoxLeft_MouseEnter(object sender, MouseEventArgs e)
         {
             ListBoxItem lb = new ListBoxItem();
@@ -572,6 +726,11 @@ namespace nsync
             RightListBox.SelectedIndex = index - 1;
         }
 
+        /// <summary>
+        /// This method is called when mouse pointer enters right listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void listBoxRight_MouseEnter(object sender, MouseEventArgs e)
         {
             ListBoxItem lb = new ListBoxItem();
@@ -580,6 +739,11 @@ namespace nsync
             LeftListBox.SelectedIndex = index - 1;
         }
 
+        /// <summary>
+        /// This method is called when user click on left listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ListBoxLeft_MouseUp(object sender, MouseButtonEventArgs e)
         {
             ListBoxItem lb = new ListBoxItem();
@@ -600,6 +764,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// This method is called when user click on right listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ListBoxRight_MouseUp(object sender, MouseButtonEventArgs e)
         {
             ListBoxItem lb = new ListBoxItem();
@@ -621,6 +790,11 @@ namespace nsync
             ShowSync();
         }
 
+        /// <summary>
+        /// Opens the browser dialog for user to choose a folder path
+        /// </summary>
+        /// <param name="originalPath">This parameter provides the starting point for the browser dialog</param>
+        /// <returns>Returns the selected folder path from the browser dialog</returns>
         private string FolderSelect(string originalPath)
         {
             System.Windows.Forms.FolderBrowserDialog FolderDialog = new System.Windows.Forms.FolderBrowserDialog();
@@ -634,7 +808,11 @@ namespace nsync
             return FolderDialog.SelectedPath;
         }
 
-        // Executed when user click on the sync button
+        /// <summary>
+        /// This method is called when user click on the sync button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSync_Click(object sender, RoutedEventArgs e)
         {
             // check one more time
@@ -657,7 +835,11 @@ namespace nsync
             synchronizer.PreSync();
         }
 
-        // Handle the event when progress percentage has changed
+        /// <summary>
+        /// This method is called when progress percentage has changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             double percentage = (double)e.ProgressPercentage / 100;
@@ -673,6 +855,10 @@ namespace nsync
             LabelProgressPercent.Content = e.ProgressPercentage.ToString() + " %";
         }
 
+        /// <summary>
+        /// Enable or disable the user interface after and during synchronization
+        /// </summary>
+        /// <param name="enableOrDisable">This boolean determines whether to disable or enable the interface</param>
         private void EnableInterface(bool enableOrDisable)
         {
             double opacityValue;
@@ -718,7 +904,11 @@ namespace nsync
             ButtonPageSettings.Opacity = ButtonPageHome.Opacity = ButtonPageBackTrack.Opacity = opacityValue;
         }
 
-        // Handle the event when sync is completed
+        /// <summary>
+        /// This method is called when when synchronization is completed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             EnableInterface(true);
@@ -754,6 +944,11 @@ namespace nsync
             LabelProgressPercent.Content = "100 %";
         }
 
+        /// <summary>
+        /// This method is called when presync calculations are completed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (!(bool) e.Result)
