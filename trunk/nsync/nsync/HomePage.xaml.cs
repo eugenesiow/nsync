@@ -37,6 +37,8 @@ namespace nsync
         private HelperManager helper;
         private Window mainWindow = Application.Current.MainWindow;
         private Settings settingsManager;
+        private string actualLeftPath;
+        private string actualRightPath;
         
         private string[] originalFolderPaths;
 
@@ -161,7 +163,8 @@ namespace nsync
         private void BoxLeft_DragEnter(object sender, DragEventArgs e)
         {
             previousImageLeft = LeftIcon.Source;
-            previousTextLeft = LeftText.Text;
+            //SQ previousTextLeft = LeftText.Text;
+            previousTextLeft = actualLeftPath; //SQ
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] fileNames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
@@ -171,18 +174,24 @@ namespace nsync
                     FileInfo fileTemp = new FileInfo(i);
                     if (dirTemp.Exists)
                     {
-                        LeftText.Text = i;
+                        //SQ LeftText.Text = i;
+                        actualLeftPath = i; //SQ
+                        LeftText.Text = ShortenText(actualLeftPath); //SQ
                     }
                     else
                     {
-                        LeftText.Text = fileTemp.DirectoryName;
+                        actualLeftPath = fileTemp.DirectoryName; //SQ
+                        //SQ LeftText.Text = fileTemp.DirectoryName;
+                        LeftText.Text = ShortenText(actualLeftPath); //SQ
                     }
                 }
             }
-            synchronizer.LeftPath = LeftText.Text;
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
 
             LeftIcon.Source = new BitmapImage(new Uri(ICON_LINK_FOLDER));
-            ShowRemovableDrives(LeftText.Text, "left");
+            //SQ ShowRemovableDrives(LeftText.Text, "left");
+            ShowRemovableDrives(actualLeftPath, "left"); //SQ
         }
 
         /// <summary>
@@ -193,7 +202,9 @@ namespace nsync
         private void BoxRight_DragEnter(object sender, DragEventArgs e)
         {
             previousImageRight = RightIcon.Source;
-            previousTextRight = RightText.Text;
+            //SQ previousTextRight = RightText.Text;
+            previousTextRight = actualRightPath; //SQ
+
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] fileNames = e.Data.GetData(DataFormats.FileDrop, true) as string[];
@@ -203,18 +214,24 @@ namespace nsync
                     FileInfo fileTemp = new FileInfo(i);
                     if (dirTemp.Exists)
                     {
-                        RightText.Text = i;
+                        //SQ RightText.Text = i;
+                        actualRightPath = i; //SQ
+                        RightText.Text = ShortenText(actualRightPath); //SQ
                     }
                     else
                     {
-                        RightText.Text = fileTemp.DirectoryName;
+                        //SQ RightText.Text = fileTemp.DirectoryName;
+                        actualRightPath = fileTemp.DirectoryName; //SQ
+                        RightText.Text = ShortenText(actualRightPath); //SQ
                     }
                 }
             }
-            synchronizer.RightPath = RightText.Text;
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.RightPath = actualRightPath; //SQ
 
             RightIcon.Source = new BitmapImage(new Uri(ICON_LINK_FOLDER));
-            ShowRemovableDrives(RightText.Text, "right");
+            //SQ ShowRemovableDrives(RightText.Text, "right");
+            ShowRemovableDrives(actualRightPath, "right");
         }
 
         /// <summary>
@@ -224,8 +241,12 @@ namespace nsync
         /// <param name="e"></param>
         private void BoxRight_DragLeave(object sender, DragEventArgs e)
         {
-            RightText.Text = previousTextRight;
-            synchronizer.RightPath = RightText.Text;
+            //SQ RightText.Text = previousTextRight;
+            actualRightPath = previousTextRight; //SQ
+            RightText.Text = ShortenText(actualRightPath); //SQ
+
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.RightPath = actualRightPath; //SQ
             RightIcon.Source = previousImageRight;
         }
 
@@ -236,8 +257,11 @@ namespace nsync
         /// <param name="e"></param>
         private void BoxLeft_DragLeave(object sender, DragEventArgs e)
         {
-            LeftText.Text = previousTextLeft;
-            synchronizer.LeftPath = LeftText.Text;
+            //SQ LeftText.Text = previousTextLeft;
+            actualLeftPath = previousTextLeft; //SQ
+            LeftText.Text = ShortenText(actualLeftPath); //SQ
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
             LeftIcon.Source = previousImageLeft;
         }
 
@@ -251,18 +275,21 @@ namespace nsync
             string currentPath = NULL_STRING;
             if (hasLeftPath)
             {
-                currentPath = LeftText.Text;
+                //SQ currentPath = LeftText.Text;
+                currentPath = actualLeftPath; //SQ
             }
             string directoryPath = FolderSelect(currentPath);
             if (directoryPath != NULL_STRING)
             {
-                LeftText.Text = directoryPath;
-
-                ShowRemovableDrives(LeftText.Text, "left");
-
+                //SQ LeftText.Text = directoryPath;
+                actualLeftPath = directoryPath; //SQ
+                LeftText.Text = ShortenText(actualLeftPath); //SQ
+                //SQ ShowRemovableDrives(LeftText.Text, "left");
+                ShowRemovableDrives(actualLeftPath, "left"); //SQ
                 hasLeftPath = true;
             }
-            synchronizer.LeftPath = LeftText.Text;
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
             ShowSync();
         }
 
@@ -276,16 +303,21 @@ namespace nsync
             string currentPath = NULL_STRING;
             if (hasRightPath)
             {
-                currentPath = RightText.Text;
+                //SQ currentPath = RightText.Text;
+                currentPath = actualRightPath; //SQ
             }
             string directoryPath = FolderSelect(currentPath);
             if (directoryPath != NULL_STRING)
             {
-                RightText.Text = directoryPath;
-                ShowRemovableDrives(RightText.Text, "right");
+                //SQ RightText.Text = directoryPath;
+                actualRightPath = directoryPath; //SQ
+                RightText.Text = ShortenText(actualRightPath); //SQ
+                //SQ ShowRemovableDrives(RightText.Text, "right");
+                ShowRemovableDrives(actualRightPath, "right"); //SQ
                 hasRightPath = true;
             }
-            synchronizer.RightPath = RightText.Text;
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.RightPath = actualRightPath; //SQ
             ShowSync();
         }
 
@@ -382,12 +414,10 @@ namespace nsync
         /// <param name="e"></param>
         private void BarMRURight_MouseEnter(object sender, MouseEventArgs e)
         {
-            
                 BarMRURight.Opacity = 0.5;
                 BarMRURight.Cursor = Cursors.Hand;
                 RightBarScrollLeft.Visibility = Visibility.Visible;
                 RightBarScrollRight.Visibility = Visibility.Visible;
-            
         }
 
         /// <summary>
@@ -463,7 +493,6 @@ namespace nsync
                 {
                     RightIcon.Source = new BitmapImage(new Uri(ICON_LINK_REMOVABLE_DRIVE));
                 }
-
             }
         }
 
@@ -546,12 +575,14 @@ namespace nsync
             if (hasLeftPath)
             {
                 LeftIcon.Source = new BitmapImage(new Uri(ICON_LINK_FOLDER));
-                ShowRemovableDrives(LeftText.Text, "left");
+                //SQ ShowRemovableDrives(LeftText.Text, "left");
+                ShowRemovableDrives(actualLeftPath, "left"); //SQ
             }
             if (hasRightPath)
             {
                 RightIcon.Source = new BitmapImage(new Uri(ICON_LINK_FOLDER));
-                ShowRemovableDrives(RightText.Text, "right");
+                //SQ ShowRemovableDrives(RightText.Text, "right");
+                ShowRemovableDrives(actualRightPath, "right"); //SQ
             }
 
             // Only if both boxes are filled with folder paths, then we need to check validity
@@ -560,14 +591,18 @@ namespace nsync
 
             if (!FolderCheck() || SimilarFolderCheck() || !SubFolderCheck())
             {
-                ShowRemovableDrives(LeftText.Text, "left");
-                ShowRemovableDrives(RightText.Text, "right");
+                //SQ ShowRemovableDrives(LeftText.Text, "left");
+                //SQ ShowRemovableDrives(RightText.Text, "right");
+                ShowRemovableDrives(actualLeftPath, "left"); //SQ
+                ShowRemovableDrives(actualRightPath, "right"); //SQ
                 ButtonSync.Visibility = Visibility.Hidden;
                 return false;
             }
 
-            ShowRemovableDrives(LeftText.Text, "left");
-            ShowRemovableDrives(RightText.Text, "right");
+            //SQ ShowRemovableDrives(LeftText.Text, "left");
+            //SQ ShowRemovableDrives(RightText.Text, "right");
+            ShowRemovableDrives(actualLeftPath, "left"); //SQ
+            ShowRemovableDrives(actualRightPath, "right"); //SQ
             ButtonSync.Visibility = Visibility.Visible;
             return true;
         }
@@ -579,7 +614,10 @@ namespace nsync
         {
             // pass to settingsmanager the 2 current folderpaths, if any
             if (hasLeftPath && hasRightPath)
-                settingsManager.SaveFolderPaths(LeftText.Text, RightText.Text);
+            {
+                //SQ settingsManager.SaveFolderPaths(LeftText.Text, RightText.Text);
+                settingsManager.SaveFolderPaths(actualLeftPath, actualRightPath); //SQ
+            }
             else
                 return;
         }
@@ -605,23 +643,33 @@ namespace nsync
             if (folderPaths.Count == 0)
                 return;
 
-            LeftText.Text = folderPaths[0];
-            synchronizer.LeftPath = LeftText.Text;
+            //SQ LeftText.Text = folderPaths[0];
+            actualLeftPath = folderPaths[0]; //SQ
+            LeftText.Text = ShortenText(actualLeftPath); //SQ
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
 
-            RightText.Text = folderPaths[1];
-            synchronizer.RightPath = RightText.Text;
+            //SQ RightText.Text = folderPaths[1];
+            actualRightPath = folderPaths[1]; //SQ
+            RightText.Text = ShortenText(actualRightPath); //SQ
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.RightPath = actualRightPath; //SQ
 
-            if (LeftText.Text == NULL_STRING)
+            if (actualLeftPath == NULL_STRING) //SQ (LeftText.Text == NULL_STRING)
             {
-                LeftText.Text = nsync.Properties.Resources.panelText;
+                //SQ LeftText.Text = nsync.Properties.Resources.panelText;
+                actualLeftPath = nsync.Properties.Resources.panelText; //SQ
+                LeftText.Text = nsync.Properties.Resources.panelText; //SQ
                 hasLeftPath = false;
             }
             else
                 hasLeftPath = true;
 
-            if (RightText.Text == NULL_STRING)
+            if (actualRightPath == NULL_STRING) //SQ (RightText.Text == NULL_STRING)
             {
-                RightText.Text = nsync.Properties.Resources.panelText;
+                //SQ RightText.Text = nsync.Properties.Resources.panelText;
+                actualRightPath = nsync.Properties.Resources.panelText; //SQ
+                RightText.Text = nsync.Properties.Resources.panelText; //SQ
                 hasRightPath = false;
             }
             else
@@ -677,7 +725,7 @@ namespace nsync
         }
 
         /// <summary>
-        /// Shorten folder path
+        /// Shortens folder path for MRU list
         /// </summary>
         /// <param name="oldPath">The path that is to be shortened is passed in</param>
         /// <returns>A string containing the new folder path is returned</returns>
@@ -690,6 +738,23 @@ namespace nsync
             else
             {
                 return oldPath;
+            }
+        }
+
+        /// <summary>
+        /// Shortens folder path for left/right box text
+        /// </summary>
+        /// <param name="oldText">The path that is to be shortened is passed in</param>
+        /// <returns>A string containing the new folder path is returned</returns>
+        private string ShortenText(string oldText)
+        {
+            if (oldText.Length > 90)
+            {
+                return oldText.Substring(0, 60) + "..." + oldText.Substring(oldText.Length - 30, 30);
+            }
+            else
+            {
+                return oldText;
             }
         }
 
@@ -748,14 +813,21 @@ namespace nsync
         {
             ListBoxItem lb = new ListBoxItem();
             lb = (ListBoxItem)e.Source;
-            LeftText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)];
+            //SQ LeftText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)];
+            actualLeftPath = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)]; //SQ
+            LeftText.Text = ShortenText(actualLeftPath); //SQ
+
             int index = Convert.ToInt32(lb.Tag);
             RightListBox.SelectedIndex = index - 1;
             lb = (ListBoxItem)RightListBox.SelectedItem;
-            RightText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)];
+            //SQ RightText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)];
+            actualRightPath = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)]; //SQ
+            RightText.Text = ShortenText(actualRightPath); //SQ
 
-            synchronizer.LeftPath = LeftText.Text;
-            synchronizer.RightPath = RightText.Text;
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
+            synchronizer.RightPath = actualRightPath; //SQ
 
             LeftListBox.SelectedIndex = -1;
             LeftListBox.Visibility = Visibility.Hidden;
@@ -774,14 +846,21 @@ namespace nsync
             ListBoxItem lb = new ListBoxItem();
             lb = (ListBoxItem)e.Source;
             // Change path label to this one and update synchronizer
-            RightText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)];
+            //SQ RightText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)];
+            actualRightPath = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 1)]; //SQ
+            RightText.Text = ShortenText(actualRightPath); //SQ
+
             int index = Convert.ToInt32(lb.Tag);
             LeftListBox.SelectedIndex = index - 1;
             lb = (ListBoxItem)LeftListBox.SelectedItem;
-            LeftText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)];
+            //SQ LeftText.Text = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)];
+            actualLeftPath = originalFolderPaths[Convert.ToInt32(lb.Tag) + (Convert.ToInt32(lb.Tag) - 2)]; //SQ
+            LeftText.Text = ShortenText(actualLeftPath); //SQ
 
-            synchronizer.LeftPath = LeftText.Text;
-            synchronizer.RightPath = RightText.Text;
+            //SQ synchronizer.LeftPath = LeftText.Text;
+            //SQ synchronizer.RightPath = RightText.Text;
+            synchronizer.LeftPath = actualLeftPath; //SQ
+            synchronizer.RightPath = actualRightPath; //SQ
 
             RightListBox.SelectedIndex = -1;
             LeftListBox.Visibility = Visibility.Hidden;
