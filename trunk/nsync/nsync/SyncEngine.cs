@@ -13,10 +13,6 @@ namespace nsync
 {
     class SyncEngine
     {
-        ////////////////////
-        // CLASS VARIABLES
-        ////////////////////
-
         public System.ComponentModel.BackgroundWorker backgroundWorker;
         public System.ComponentModel.BackgroundWorker backgroundWorker2;
         private ulong freeDiskSpaceForLeft = 0;
@@ -30,10 +26,9 @@ namespace nsync
         private static int countChanges = 0;
         private Intelligence intelligentManager;
 
-        ////////////////////
-        // CONSTRUCTOR
-        ////////////////////
-
+        /// <summary>
+        /// Constructor for SyncEngine
+        /// </summary>
         public SyncEngine()
         {
             // Set up the BackgroundWorker object by 
@@ -50,12 +45,12 @@ namespace nsync
             intelligentManager = new Intelligence();
         }
 
-        ////////////////////
-        // PRIVATE METHODS
-        ////////////////////
-
-        // Calculate the amount of free disk space.
-        // Units is in bytes.
+        /// <summary>
+        /// Computes the amount of free disk space
+        /// <para>Units is in bytes</para>
+        /// </summary>
+        /// <param name="drive">This parameter is the drive volume to be checked</param>
+        /// <returns></returns>
         private ulong GetFreeDiskSpaceInBytes(string drive)
         {
             ManagementObject disk = new ManagementObject(
@@ -64,14 +59,23 @@ namespace nsync
             return (ulong)disk["FreeSpace"];
         }
 
-        // Convert bytes to megabytes.
+        /// <summary>
+        /// Converts bytes to megabytes
+        /// </summary>
+        /// <param name="amount">This parameter is the value to be converted</param>
+        /// <returns>Returns a string which contains the converted value</returns>
         private string ConvertBytesToMegabytes(ulong amount)
         {
             return (Convert.ToUInt64(amount.ToString()) / 1000000).ToString() + " MB";
         }
 
-        // Detect the changes to the folder and write to metadata file.
-        // Most of the work done by the sync framework.
+        /// <summary>
+        /// Detect the changes done to the folder
+        /// <para>Updates the metadata</para>
+        /// </summary>
+        /// <param name="replicaRootPath">This parameter is the folder path to be checked</param>
+        /// <param name="filter">This parameter is the filter which will be used during synchronization</param>
+        /// <param name="options">This parameter holds the synchronization options</param>
         private static void DetectChangesonFileSystemReplica(
             string replicaRootPath, FileSyncScopeFilter filter, FileSyncOptions options)
         {
@@ -90,7 +94,15 @@ namespace nsync
             }
         }
 
-        // Telling the sync framework to start propogating changes
+        /// <summary>
+        /// Start the synchronization in one direction
+        /// </summary>
+        /// <param name="sourcePath">This parameter holds the source folder path</param>
+        /// <param name="destPath">This parameter holds the destination folder path</param>
+        /// <param name="filter">This parameter is the filter which will be used during synchronization</param>
+        /// <param name="options">This parameter holds the synchronization options</param>
+        /// <param name="isPreview">This parameter is a boolean which indicates if this method should be run in preview mode</param>
+        /// <returns>Returns a boolean to indicate if the the synchronization was successful</returns>
         private bool SyncFileSystemReplicasOneWay(string sourcePath, string destPath,
             FileSyncScopeFilter filter, FileSyncOptions options, bool isPreview)
         {
@@ -153,8 +165,10 @@ namespace nsync
             }
         }
 
-        // Check if there is sufficient space
-        // for sync to take place
+        /// <summary>
+        /// Checks if there is sufficient disk space for synchronization to be done
+        /// </summary>
+        /// <returns>Returns a boolean of the result</returns>
         private bool CheckSpace()
         {
             if (!isCheckForLeftDone)
@@ -166,22 +180,34 @@ namespace nsync
                    diskSpaceNeededForRight < freeDiskSpaceForLeft;
         }
 
-        // Setting conflicting rules
+        /// <summary>
+        /// This method is called when there are conflicting items during synchronization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private static void OnItemConflicting(object sender, ItemConflictingEventArgs args)
         {
             // Currently, latest change wins
             args.SetResolutionAction(ConflictResolutionAction.SourceWins);
         }
 
-        // Setting constraint rules
+        /// <summary>
+        /// This method is called when there are constraint items during synchronization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private static void OnItemConstraint(object sender, ItemConstraintEventArgs args)
         {
-            MessageBox.Show("constraint");
-            args.SetResolutionAction(ConstraintConflictResolutionAction.RenameSource);
+            args.SetResolutionAction(ConstraintConflictResolutionAction.SourceWins);
         }
 
-        // Count the number of changes already done by the sync framework
-        // and report the progress percentage to the backgroundWorker
+        /// <summary>
+        /// This method is called when changes are done to a file
+        /// <para>Counts the number of changes already done by the sync framework</para>
+        /// <para>Reports the progress percentage to the backgroundWorker</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnAppliedChange(object sender, AppliedChangeEventArgs args)
         {
             
@@ -208,10 +234,14 @@ namespace nsync
             }
             */ 
         }
-        
-        // Counts the number of changes to be made later.
-        // Calculate amount of disk space needed for sync later.
-        // Note: no changes are actually made during pre sync.
+
+        /// <summary>
+        /// This method is called when changes are going to be done to a file
+        /// <para>Counts the number of changes to be made later during synchronization</para>
+        /// <para>Counts the amount of disk space needed later during synchronization</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnApplyingChange(object sender, ApplyingChangeEventArgs args)
         {
             countChanges++;
@@ -221,8 +251,11 @@ namespace nsync
                 diskSpaceNeededForRight += (ulong)args.NewFileData.Size;
         }
 
-        // This method is called when the backgroundWorker starts working.
-        // The 'real' work to be done is called from here.
+        /// <summary>
+        /// This method is called when backgroundWorker is called to start working
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             System.ComponentModel.BackgroundWorker worker = sender as BackgroundWorker;
@@ -231,12 +264,20 @@ namespace nsync
             e.Result = InternalStartSync();
         }
 
+        /// <summary>
+        /// This method is called when backgroundWorker2 is called to start working
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = InternalPreSync();
         }
 
-        // Start the sync process
+        /// <summary>
+        /// Starts the synchronization job
+        /// </summary>
+        /// <returns>Returns a boolean to indicate if the synchronization was successful</returns>
         private bool InternalStartSync()
         {
             try
@@ -270,11 +311,11 @@ namespace nsync
             }
         }
 
-        ////////////////////
-        // PUBLIC METHODS
-        ////////////////////
 
-        // Return folder paths
+        /// <summary>
+        /// Gets the stored folder paths in SyncEngine
+        /// </summary>
+        /// <returns>Returns an array of string which contains 2 folder paths</returns>
         public string[] GetPath()
         {
             string[] listOfPaths = new string[2];
@@ -283,46 +324,36 @@ namespace nsync
             return listOfPaths;
         }
 
-        /* SHAOQI: MAYBE CAN REMOVE, NOT IN USE ANYMORE
-        // Set 2 folder paths and return a boolean to indicate success
-        public bool SetPath(string newLeftPath, string newRightPath)
-        {
-            if (string.IsNullOrEmpty(newLeftPath) || string.IsNullOrEmpty(newRightPath) ||
-                !Directory.Exists(newLeftPath) || !Directory.Exists(newRightPath))
-            {
-                return false;
-            }
-            else
-            {
-                leftPath = newLeftPath;
-                rightPath = newRightPath;
-                return true;
-            }
-        }
-        */
-
-        // Set left folder path
+        /// <summary>
+        /// Setter and Getter method for left folder path
+        /// </summary>
         public string LeftPath
         {
             get { return leftPath; }
             set { leftPath = value; }
         }
 
-        // Set right folder path
+        /// <summary>
+        /// Setter and Getter method for right folder path
+        /// </summary>
         public string RightPath
         {
             get { return rightPath; }
             set { rightPath = value; }
         }
 
+        /// <summary>
+        /// Gets backgroundWorker2 to do presync preparations
+        /// </summary>
         public void PreSync()
         {
             backgroundWorker2.RunWorkerAsync();
         }
         
-        // Do pre sync preparations
-        // E.g. check if there is sufficient disk space for sync
-        // E.g. count number of changes to be done by the sync framework
+        /// <summary>
+        /// Does actual presync preparations
+        /// </summary>
+        /// <returns></returns>
         private bool InternalPreSync()
         {
             try
@@ -367,22 +398,28 @@ namespace nsync
             }
         }
 
-        // When sync button is click from UI, this method will be called.
-        // This will call the backgroundWorker to start doing its work.
+        /// <summary>
+        /// Get the real synchronization process to start
+        /// </summary>
         public void StartSync()
         {
             // Start the asynchronous operation.
             backgroundWorker.RunWorkerAsync();
         }
 
-        // Checks if the paths are valid. 
-        // One cannot be the subfolder of the other.
+        /// <summary>
+        /// Asks IntelligentManager to check if a folder is subfolder of another folder
+        /// </summary>
+        /// <returns></returns>
         public bool CheckSubFolder()
         {
             return !intelligentManager.IsFolderSubFolder(leftPath, rightPath);
         }
 
-        // Checks if the 2 folders are already sync
+        /// <summary>
+        /// Checks if folder paths are already synchronized
+        /// </summary>
+        /// <returns>Return the result which indicates if folder paths are already synchronized</returns>
         public bool AreFoldersSync()
         {
             if (countChanges == 0)
@@ -391,6 +428,11 @@ namespace nsync
                 return false;
         }
 
+        /// <summary>
+        /// Asks IntelligentManager to check if the left or right folder path exists
+        /// </summary>
+        /// <param name="leftOrRight">This parameter indicates the left or right folder to be checked</param>
+        /// <returns>Returns the result of the check in a boolean</returns>
         public bool CheckFolderExists(string leftOrRight)
         {
             if (leftOrRight == "left" || leftOrRight == "Left")
@@ -404,11 +446,20 @@ namespace nsync
             return false;
         }
 
+        /// <summary>
+        /// Asks IntelligentManager to check if the two folder paths are similar
+        /// </summary>
+        /// <returns>Returns the result of the check in a boolean</returns>
         public bool CheckSimilarFolder()
         {
             return intelligentManager.IsFoldersSimilar(leftPath, rightPath);
         }
 
+        /// <summary>
+        /// Ask IntelligentManager to check if a folder path is a removable drive
+        /// </summary>
+        /// <param name="path">This parameters indicates the folder path to be checked</param>
+        /// <returns>Returns the result of the check in a boolean</returns>
         public bool CheckRemovableDrive(string path)
         {
             return intelligentManager.IsRemovableDrive(path);

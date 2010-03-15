@@ -26,38 +26,75 @@ namespace nsync
     public partial class MainWindow : Window
     {
         private static int oldSelectedIndex = 0;
-
+        
+        /// <summary>
+        /// Constructor for MainWindow class
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the titlebar of MainWindow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the exit button on MainWindow
+        /// <para>nsync will exit after this</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// This method is called when user clicks on the minimize button on MainWindow
+        /// <para>nsync will minimize to taskbar after this</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonMinimise_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
 
+        /// <summary>
+        /// This method is called when users click on the left dot on MainWindow
+        /// <para>Current page will be switched to SettingsPage</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPageSettings_Click(object sender, RoutedEventArgs e)
         {
             viewList.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// This method is called when users click on the right dot on MainWindow
+        /// <para>Current page will be switched to TrackBackPage</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPageBackTrack_Click(object sender, RoutedEventArgs e)
         {
             viewList.SelectedIndex = 2;
         }
 
-        //Shows the slider bar
+        /// <summary>
+        /// This method is called when mouse pointer is moved near the sides of MainWindow
+        /// <para>Slider bars will be appear when mouse pointer is near it</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowMain_MouseMove(object sender, MouseEventArgs e)
         {
             Point mousePos = e.GetPosition(this);
@@ -83,6 +120,12 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when viewList.SelectedIndex is changed
+        /// <para>The respective page will be loaded</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void viewList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             XmlElement root = (XmlElement)viewer.DataContext;
@@ -128,6 +171,9 @@ namespace nsync
             UpdateToolTips();
         }
 
+        /// <summary>
+        /// Updates the tooltips of the slider bars
+        /// </summary>
         private void UpdateToolTips()
         {
             int leftIndex = viewList.SelectedIndex - 1;
@@ -153,6 +199,11 @@ namespace nsync
             
         }
 
+        /// <summary>
+        /// Takes a snapshot of an object element
+        /// </summary>
+        /// <param name="element">This parameter is an object that will be snapshot</param>
+        /// <returns>Returns a bitmap of the snapshot</returns>
         public RenderTargetBitmap RenderBitmap(FrameworkElement element)
         {
             double topLeft = 0;
@@ -176,11 +227,23 @@ namespace nsync
             return bitmap;
         }
 
+        /// <summary>
+        /// This method is called when users click on the center dot on MainWindow
+        /// <para>Current page will be switched to HomePage</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonPageHome_Click(object sender, RoutedEventArgs e)
         {
             viewList.SelectedIndex = 1;
         }
 
+        /// <summary>
+        /// This method is called when users click on the left sliderbar
+        /// <para>Current page will be switched to the page on the left</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSideTabLeft_Click(object sender, RoutedEventArgs e)
         {
             if (viewList.SelectedIndex > 0)
@@ -193,6 +256,12 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when users click on the left sliderbar
+        /// <para>Current page will be switched to the page on the left</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSideTabRight_Click(object sender, RoutedEventArgs e)
         {
             if (viewList.SelectedIndex < viewList.Items.Count)
@@ -205,6 +274,12 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// This method is called when user click on the letter 'n' of nsync logo
+        /// <para>The testing window will appear</para>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonTesting_Click(object sender, RoutedEventArgs e)
         {
             TestEngine testEngine = new TestEngine();

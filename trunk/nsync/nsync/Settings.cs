@@ -20,8 +20,14 @@ namespace nsync
 
         private static readonly Settings instance = new Settings();
 
+        /// <summary>
+        /// Constructor of Settings class
+        /// </summary>
         private Settings() {}
 
+        /// <summary>
+        /// Gets the instance of the Settings object
+        /// </summary>
         public static Settings Instance
         {
             get
@@ -30,6 +36,10 @@ namespace nsync
             }
         }
 
+        /// <summary>
+        /// Change the status of the HelperWindow which determines if it should appear in nsync
+        /// </summary>
+        /// <param name="status">This parameter is a boolean to indicate if HelperWindow should appear</param>
         public void SetHelperWindowStatus(bool status)
         {
             if (!File.Exists(settingsFile))
@@ -46,6 +56,10 @@ namespace nsync
 
         }
 
+        /// <summary>
+        /// Gets the current status of the HelperWindow
+        /// </summary>
+        /// <returns>Returns a boolean which indicates if HelperWindow should appear</returns>
         public bool GetHelperWindowStatus()
         {
             if (!File.Exists(settingsFile))
@@ -59,6 +73,10 @@ namespace nsync
             return Boolean.Parse(helperWindowStatusNode.InnerText);
         }
 
+        /// <summary>
+        /// Loads the saved folder paths into a list
+        /// </summary>
+        /// <returns>Returns a list of strings which contains the saved folder paths</returns>
         public List<string> LoadFolderPaths()
         {
             List<string> results = new List<string>();
@@ -77,6 +95,11 @@ namespace nsync
             return results;
         }
 
+        /// <summary>
+        /// Saves the current folder paths into settings.xml
+        /// </summary>
+        /// <param name="leftPath">This parameter will be saved into settings.xml</param>
+        /// <param name="rightPath">This parameter will be saved into settings.xml</param>
         public void SaveFolderPaths(string leftPath, string rightPath)
         {
             string[] tempStorage = new string[10];
@@ -128,6 +151,12 @@ namespace nsync
                 doc.Save(settingsFile);
         }
 
+        /// <summary>
+        /// Gets a XMLNode from a XML document
+        /// </summary>
+        /// <param name="doc">This parameter indicates the XMLDocument to be read</param>
+        /// <param name="path">This parameter indicates the tag of the XMLNode to search for</param>
+        /// <returns>Returns a matching XMLNode</returns>
         private XmlNode SelectNode(XmlDocument doc, string path)
         {
             try
@@ -157,6 +186,11 @@ namespace nsync
             return node;
         }
 
+        /// <summary>
+        /// Checks if a XML document is properly formatted
+        /// </summary>
+        /// <param name="doc">This parameter is the XML document to be checked</param>
+        /// <returns>Returns a boolean to indicate if the XML document is valid</returns>
         private bool CheckSettingsXML(XmlDocument doc)
         {
             if (null == doc.SelectSingleNode(PATH_SETTINGS+"/HelperWindowIsOn"))
@@ -173,6 +207,9 @@ namespace nsync
             return true;
         }
 
+        /// <summary>
+        /// Creates a new settings.xml
+        /// </summary>
         private void CreateNewSettingsXML()
         {
             XmlTextWriter textWriter = new XmlTextWriter(settingsFile, null);

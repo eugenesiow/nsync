@@ -10,6 +10,11 @@ namespace nsync
 {
     class Intelligence
     {
+        /// <summary>
+        /// Checks if the folder path exists
+        /// </summary>
+        /// <param name="folderPath">This parameter is the folder path to be checked</param>
+        /// <returns>Returns a boolean which indicates if the folder path exists</returns>
         public bool IsFolderExists(string folderPath)
         {
             if (Directory.Exists(folderPath))
@@ -18,6 +23,12 @@ namespace nsync
                 return false;
         }
 
+        /// <summary>
+        /// Checks if two folder paths are similar
+        /// </summary>
+        /// <param name="leftFolderPath">This parameter is the folder path to be checked</param>
+        /// <param name="rightFolderPath">This parameter is the folder path to be checked</param>
+        /// <returns>Returns a boolean which indicates if both folder paths are similar</returns>
         public bool IsFoldersSimilar(string leftFolderPath, string rightFolderPath)
         {
             if (leftFolderPath == rightFolderPath)
@@ -25,6 +36,12 @@ namespace nsync
             return false;
         }
 
+        /// <summary>
+        /// Checks if a folder is a subfolder of another
+        /// </summary>
+        /// <param name="leftFolderPath">This parameter is the folder path to be checked</param>
+        /// <param name="rightFolderPath">This parameter is the folder path to be checked</param>
+        /// <returns>Returns a boolean which indicates if a folder is a subfolder of another</returns>
         public bool IsFolderSubFolder(string leftFolderPath, string rightFolderPath)
         {
             DirectoryInfo leftPathDir = new DirectoryInfo(leftFolderPath);
@@ -50,7 +67,11 @@ namespace nsync
                 return false;
         }
 
-        //Checks if drive is removable
+        /// <summary>
+        /// Checks if the folder path belongs to a removable drive
+        /// </summary>
+        /// <param name="path">This parameter is the folder path to be checked</param>
+        /// <returns>Returns a boolean which indicates if the folder path belongs to a removable drive</returns>
         public bool IsRemovableDrive(string path)
         {
             ManagementObjectSearcher mosDisks = new ManagementObjectSearcher(@"SELECT * FROM Win32_LogicalDisk WHERE DriveType=2"); //Finds all removable drives
