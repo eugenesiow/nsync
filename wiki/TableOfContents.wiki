@@ -2,6 +2,7 @@
   * [nsync nsync] 
     * [nsyncFeatures Features] 
     * [nsyncFAQ FAQ] 
+    * [Screenshots Screenshots]
   * [DeveloperGuide Developer Guide] 
     * [CodingGuidelines Coding Guidelines]
     * [TortoiseSVN]
