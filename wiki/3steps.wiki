@@ -1,0 +1,9 @@
+#summary 3 Steps to Synchronization
+
+= 3 Steps to Synchronization =
+
+http://nsync.googlecode.com/files/step1.png
+
+http://nsync.googlecode.com/files/step2.png
+
+http://nsync.googlecode.com/files/step3.png
