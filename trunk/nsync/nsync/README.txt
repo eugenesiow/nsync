@@ -23,6 +23,7 @@
  Contact Us
 ----------------------
 Email: cs3215-team14@googlegroups.com
+Website: http://code.google.com/p/nsync/
 
 ----------------------
  Extras
