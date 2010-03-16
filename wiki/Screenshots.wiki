@@ -1,13 +1,9 @@
 #summary nsync Screenshots.
 
-= 3 Steps to Synchronization =
-
-http://nsync.googlecode.com/files/step1.png
-
-http://nsync.googlecode.com/files/step2.png
-
-http://nsync.googlecode.com/files/step3.png
-
 = The Main Interface =
 
+http://nsync.googlecode.com/files/main_interface.jpg
+
 = The Settings Page =
+
+http://nsync.googlecode.com/files/settings.jpg
