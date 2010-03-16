@@ -7,3 +7,4 @@
     * [CodingGuidelines Coding Guidelines]
     * [TortoiseSVN]
   * [Synchronization Synchronization 101]
+  * [3steps 3 Steps to Synchronization]
