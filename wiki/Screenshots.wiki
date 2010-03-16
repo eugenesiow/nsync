@@ -1,13 +1,13 @@
-#summary One-sentence summary of this page.
+#summary nsync Screenshots.
 
-= Introduction =
+= 3 Steps to Synchronization =
 
-Add your content here.
+http://nsync.googlecode.com/files/step1.png
 
+http://nsync.googlecode.com/files/step2.png
 
-= Details =
+http://nsync.googlecode.com/files/step3.png
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= The Main Interface =
+
+= The Settings Page =
