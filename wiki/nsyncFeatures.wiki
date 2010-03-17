@@ -31,7 +31,7 @@
 
 = sync using a removable drive =
 
-  * Nsync is capable of syncing a removable drive with other folders on the computer.
+  * nsync is capable of syncing a removable drive with other folders on the computer.
 
 = Intelligence =
 
