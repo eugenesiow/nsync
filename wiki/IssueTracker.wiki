@@ -1,0 +1,41 @@
+#summary How To Use Issue Tracker To Report Bugs
+#labels Featured
+
+= How do I report bugs found on nsync =
+
+Team14 is dedicated to providing users a pleasant experience and a program for their synchronization needs. Should you encounter any issues or bugs encountered in our program, please feel free to tell us about the problems you face and how we can help improve our program to better suit your needs.
+
+== Here is how you can inform us of such problems ==
+
+ # Click on the 'Issues' Tab that is in between the 'Wiki' and 'Source' Tab.
+ # Click on 'New Issues'.
+ # Type in a one line summary of the problems you face, or upgrades you would like to see
+ # Enter the descriptions.
+- For bugs, please describe the steps you took that encounters the problem.
+
+- For upgrades, please state what sort of features do you expect to see in future versions.
+
+Note : The issue tracker provides a template on which you can key in your details. Do use that template for your convenience.
+----
+*For Example*
+
+What steps will reproduce the problem?
+
+1.
+
+2.
+
+3.
+  
+
+
+What is the expected output? What do you see instead?
+
+
+What version of the product are you using? On what operating system?
+
+
+Please provide any additional information below.
+----
+
+Team14 is looking forward to help serve the community better with our product and hope you have a good experience using our program. Do introduce your friends to this wonderful product.
