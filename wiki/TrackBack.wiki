@@ -2,8 +2,9 @@
 
 = Introduction =
 
-TrackBack is a feature in nsync that ensures you are able to recover your directories to pre-sync state. It ensures that you never(unless there's a natural disaster of course) lose any files! If reliability is what you want, TrackBack seeks to provide this.
+TrackBack (to be included in the next release) is a feature in nsync that ensures you are able to recover your directories to pre-sync state. It ensures that you never(unless there's a natural disaster of course) lose any files! If reliability is what you want, TrackBack seeks to provide this.
 
 = How !TrackBack works =
 
-  # You synchronize 2 folders. 
+  # Before every sync session, a zip file of the folder pair will be created for back-up and restoration purposes.
+  # By using the Track Back feature, the user would be able to restore/unzip his/her back-up file of a particular day, e.g.: Unzip/Restore the backup file that I created on last Monday etc.
