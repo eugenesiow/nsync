@@ -2,7 +2,7 @@
 
 = The Main Interface =
 
-http://nsync.googlecode.com/files/main_interface.jpg
+http://nsync.googlecode.com/files/MainInterface.jpg
 
 
 = Notifications from Intelligent Path Management =
@@ -17,4 +17,4 @@ http://nsync.googlecode.com/files/nsync_in_progress(Screenshots).jpg
 
 = The Settings Page =
 
-http://nsync.googlecode.com/files/settings.jpg
+http://nsync.googlecode.com/files/SettingsPage.jpg
