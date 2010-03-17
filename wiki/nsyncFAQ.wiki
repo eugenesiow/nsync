@@ -13,3 +13,7 @@
 Anybody and everybody who wants to keep two folders up to date across a single or multiple devices.
 
 Never tried synchronization before? nsync is your best shot at falling in love with the simplicity of data and folder synchronization!
+
+= Is an internet connection required for installation of nsync? =
+
+Yes, an internet connection is required to download the Microsoft Sync frameworks during nsync installation
