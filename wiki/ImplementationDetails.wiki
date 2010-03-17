@@ -8,6 +8,25 @@ http://nsync.googlecode.com/files/v0.9%20architecture.jpg
 
 
 
+
+
+
+
+
+
 = Use Case Diagram =
 
 http://nsync.googlecode.com/files/useCaseDiag_v0.9.jpg
+
+
+
+
+
+
+
+
+
+
+= Domain Model =
+
+http://nsync.googlecode.com/files/DomailModel.jpg
