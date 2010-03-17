@@ -5,6 +5,10 @@
 
 Team14 is dedicated to providing users a pleasant experience and a program for their synchronization needs. Should you encounter any issues or bugs encountered in our program, please feel free to tell us about the problems you face and how we can help improve our program to better suit your needs.
 
+=== To View Current Bug Problems Or Previous Issues ===
+
+- Go to the 'Issues' Tab, besides the 'search', choose All Issues and click search. It will display all issues reported and their current statuses.
+
 == Here is how you can inform us of such problems ==
 
  # Click on the 'Issues' Tab that is in between the 'Wiki' and 'Source' Tab.
