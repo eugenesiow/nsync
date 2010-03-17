@@ -2,7 +2,7 @@
 
 = Architecture Diagram =
 
-http://nsync.googlecode.com/files/v0.9 architecture.jpg
+http://nsync.googlecode.com/files/v0.9_architecture.jpg
 
 
 = Use Case Diagram =
