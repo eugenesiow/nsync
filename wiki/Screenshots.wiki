@@ -4,6 +4,17 @@
 
 http://nsync.googlecode.com/files/main_interface.jpg
 
+
+= Notifications from Intelligent Path Management =
+
+http://nsync.googlecode.com/files/notifications.jpg
+
+
+= Sync in progress (with Progress Bar) =
+
+http://nsync.googlecode.com/files/nsync_in_progress(Screenshots).jpg
+
+
 = The Settings Page =
 
 http://nsync.googlecode.com/files/settings.jpg
