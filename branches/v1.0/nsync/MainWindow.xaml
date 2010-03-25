@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:const="clr-namespace:nsync.Properties"    
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="nsync" Height="340" Width="518" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" MaxWidth="518" MaxHeight="340" Icon="/nsync;component/Resources/nsync.ico" Name="WindowMain" Mouse.MouseMove="WindowMain_MouseMove">
+    Title="nsync" Height="340" Width="518" ResizeMode="NoResize" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen" MaxWidth="518" MaxHeight="340" Icon="/nsync;component/Resources/nsync.ico" Name="WindowMain" Mouse.MouseMove="WindowMain_MouseMove">
     
     <Window.Background>
         <ImageBrush ImageSource="Resources/background.png"/>
