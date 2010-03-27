@@ -160,6 +160,7 @@
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SingleInstance.cs" />
     <Compile Include="SyncEngine.cs" />
     <Compile Include="TestEngine.cs">
       <SubType>Form</SubType>
