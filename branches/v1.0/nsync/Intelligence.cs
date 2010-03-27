@@ -39,27 +39,34 @@ namespace nsync
         /// <returns>Returns a boolean which indicates if a folder is a subfolder of another</returns>
         public bool IsFolderSubFolder(string leftFolderPath, string rightFolderPath)
         {
-            DirectoryInfo leftPathDir = new DirectoryInfo(leftFolderPath);
-            DirectoryInfo rightPathDir = new DirectoryInfo(rightFolderPath);
-            string leftPathDirParent;
-            string rightPathDirParent;
+            string[] leftFolderPathArray = leftFolderPath.Split(new char[] { '\\' });
+            string[] rightFolderPathArray = rightFolderPath.Split(new char[] { '\\' });
 
-            if (leftPathDir.Parent != null)
-                leftPathDirParent = leftPathDir.Parent.FullName.ToString();
-            else
-                leftPathDirParent = leftPathDir.FullName.ToString();
+            return isSamePath(leftFolderPathArray, rightFolderPathArray);
+        }
 
-            if (rightPathDir.Parent != null)
-                rightPathDirParent = rightPathDir.Parent.FullName.ToString();
-            else
-                rightPathDirParent = rightPathDir.FullName.ToString();
-
-            if (leftPathDirParent.Contains(rightFolderPath) || rightPathDirParent.Contains(leftFolderPath))
+        /// <summary>
+        /// Compares the folder paths of the input arrays and determine if they
+        /// have the same path from the root directory.
+        /// </summary>
+        /// <param name="sourceArray">Array of a folder path to be checked</param>
+        /// <param name="destinationArray">Array of a folder path to be checked</param>
+        /// <returns></returns>
+        private bool isSamePath(string[] sourceArray, string[] destinationArray)
+        {
+            if (sourceArray.Length > destinationArray.Length)
             {
-                return true;
+                string[] tmp = sourceArray;
+                sourceArray = destinationArray;
+                destinationArray = tmp;
             }
-            else
-                return false;
+
+            for (int i = 0; i < sourceArray.Length; i++)
+            {
+                if (sourceArray[i] != destinationArray[i])
+                    return false;
+            }
+            return true;
         }
 
         /// <summary>
