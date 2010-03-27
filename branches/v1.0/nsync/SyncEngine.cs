@@ -250,6 +250,15 @@ namespace nsync
         private void backgroundWorkerForPreSync_DoWork(object sender, DoWorkEventArgs e)
         {
             e.Result = InternalPreSync();
+            try
+            {
+                e.Result = InternalPreSync();
+            }
+            catch
+            {
+                MessageBox.Show("backgroundWorkerForPreSync_DoWork");
+                //throw;
+            }
         }
 
         /// <summary>
@@ -358,6 +367,7 @@ namespace nsync
                 DetectChangesonFileSystemReplica(rightPath, filter, options);
 
                 // Start the 2-way sync
+                // this one when return false, it means not enough disk space
                 if (!SyncFileSystemReplicasOneWay(leftPath, rightPath, null, options, true))
                     return false;
                 if (!SyncFileSystemReplicasOneWay(rightPath, leftPath, null, options, true))
@@ -367,7 +377,9 @@ namespace nsync
             }
             catch (Exception e)
             {
-                return false;
+                if(e.Message.Contains("Access is denied"))
+                    MessageBox.Show("START: InternalPreSync()" + e.Message);
+                throw e;
             }
         }
 

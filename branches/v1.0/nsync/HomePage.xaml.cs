@@ -1036,25 +1036,34 @@ namespace nsync
         /// <param name="e"></param>
         private void backgroundWorkerForPreSync_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (!(bool) e.Result)
+            try
             {
-                EnableInterface(true);
-                helper.Show(nsync.Properties.Resources.insufficientDiskSpace, 5, HelperWindow.windowStartPosition.windowTop);
-                LabelProgress.Visibility = Visibility.Visible;
-                LabelProgress.Content = MESSAGE_ERROR_DETECTED;
-                LabelProgressPercent.Visibility = Visibility.Hidden;
-                ButtonSync.Visibility = Visibility.Hidden;
-                FolderCheck();
-                return;
+                if (!(bool)e.Result)
+                {
+                    EnableInterface(true);
+                    helper.Show(nsync.Properties.Resources.insufficientDiskSpace, 5, HelperWindow.windowStartPosition.windowTop);
+                    LabelProgress.Visibility = Visibility.Visible;
+                    LabelProgress.Content = MESSAGE_ERROR_DETECTED;
+                    LabelProgressPercent.Visibility = Visibility.Hidden;
+                    // Users should be able click the sync button again,
+                    // in case they've freed some disk space
+                    ButtonSync.Visibility = Visibility.Visible;
+                    FolderCheck();
+                    return;
+                }
+
+                EnableInterface(false);
+
+                LabelProgress.Content = MESSAGE_SYNCING_FOLDERS;
+                LabelProgressPercent.Visibility = Visibility.Visible;
+                LabelProgressPercent.Content = "0 %";
+                //if (!synchronizer.AreFoldersSync()) trackBack.BackupFolders(LeftText.Text, RightText.Text);
+                synchronizer.StartSync();
             }
-
-            EnableInterface(false);
-
-            LabelProgress.Content = MESSAGE_SYNCING_FOLDERS;
-            LabelProgressPercent.Visibility = Visibility.Visible;
-            LabelProgressPercent.Content = "0 %";
-            //if (!synchronizer.AreFoldersSync()) trackBack.BackupFolders(LeftText.Text, RightText.Text);
-            synchronizer.StartSync();
+            catch(Exception err)
+            {
+                MessageBox.Show("backgroundWorkerForPreSync_RunWorkerCompleted");
+            }
         }
 
         #endregion
