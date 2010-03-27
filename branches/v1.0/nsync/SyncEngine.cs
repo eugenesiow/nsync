@@ -185,7 +185,7 @@ namespace nsync
         private static void OnItemConflicting(object sender, ItemConflictingEventArgs args)
         {
             // Currently, latest change wins
-            args.SetResolutionAction(ConflictResolutionAction.SourceWins);
+            args.SetResolutionAction(ConflictResolutionAction.Merge);
         }
 
         /// <summary>
