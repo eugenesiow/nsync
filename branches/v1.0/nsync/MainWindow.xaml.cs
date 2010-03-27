@@ -271,8 +271,11 @@ namespace nsync
         /// <param name="e"></param>
         private void ButtonTesting_Click(object sender, RoutedEventArgs e)
         {
-            TestEngine testEngine = new TestEngine();
-            testEngine.ShowDialog();
+            // Disabled, unless you want to do testing, then uncomment this area.
+            // After testing, comment it back.
+            // Users should not be able to see the TestEngine Dialog
+            //TestEngine testEngine = new TestEngine();
+            //testEngine.ShowDialog();
         }
 
     }

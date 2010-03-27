@@ -195,7 +195,8 @@ namespace nsync
         /// <param name="args"></param>
         private static void OnItemConstraint(object sender, ItemConstraintEventArgs args)
         {
-            args.SetResolutionAction(ConstraintConflictResolutionAction.SourceWins);
+            args.SetResolutionAction(ConstraintConflictResolutionAction.Merge);
+            //MessageBox.Show("hi");
         }
 
         /// <summary>
