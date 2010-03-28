@@ -1037,6 +1037,7 @@ namespace nsync
         private void backgroundWorkerForPreSync_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if ((int)e.Result > 0)
+            {
                 EnableInterface(true);
                 switch ((int)e.Result)
                 {
