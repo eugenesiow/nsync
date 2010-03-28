@@ -483,7 +483,7 @@
             </summary>
             <returns>Returns an array of string which contains 2 folder paths</returns>
         </member>
-        <member name="M:nsync.SyncEngine.CheckSubFolder">
+        <member name="M:nsync.SyncEngine.IsFolderSubfolder">
             <summary>
             Asks IntelligentManager to check if a folder is subfolder of another folder
             </summary>
@@ -495,14 +495,14 @@
             </summary>
             <returns>Return the result which indicates if folder paths are already synchronized</returns>
         </member>
-        <member name="M:nsync.SyncEngine.CheckFolderExists(System.String)">
+        <member name="M:nsync.SyncEngine.IsFolderExists(System.String)">
             <summary>
             Asks IntelligentManager to check if the left or right folder path exists
             </summary>
             <param name="leftOrRight">This parameter indicates the left or right folder to be checked</param>
             <returns>Returns the result of the check in a boolean</returns>
         </member>
-        <member name="M:nsync.SyncEngine.CheckSimilarFolder">
+        <member name="M:nsync.SyncEngine.IsFoldersSimilar">
             <summary>
             Asks IntelligentManager to check if the two folder paths are similar
             </summary>
@@ -884,19 +884,19 @@
             <param name="path"></param>
             <param name="leftOrRight"></param>
         </member>
-        <member name="M:nsync.HomePage.FolderCheck">
+        <member name="M:nsync.HomePage.IsFolderExist">
             <summary>
             Checks if folder paths exist
             </summary>
             <returns>Return a boolean to determine if folder paths exist</returns>
         </member>
-        <member name="M:nsync.HomePage.SimilarFolderCheck">
+        <member name="M:nsync.HomePage.IsFoldersSimilar">
             <summary>
             Checks if folders are similar
             </summary>
             <returns>Return a boolean to determine if folder paths are similar</returns>
         </member>
-        <member name="M:nsync.HomePage.SubFolderCheck">
+        <member name="M:nsync.HomePage.IsFolderSubfolder">
             <summary>
             Checks if one folder is a subfolder of another
             </summary>

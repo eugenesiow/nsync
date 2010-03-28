@@ -502,10 +502,10 @@ namespace nsync
         /// Checks if folder paths exist
         /// </summary>
         /// <returns>Return a boolean to determine if folder paths exist</returns>
-        private bool FolderCheck()
+        private bool IsFolderExist()
         {
-            bool rightFolderExists = synchronizer.CheckFolderExists("right");
-            bool leftFolderExists = synchronizer.CheckFolderExists("left");
+            bool rightFolderExists = synchronizer.IsFolderExists("right");
+            bool leftFolderExists = synchronizer.IsFolderExists("left");
 
             if (!rightFolderExists && !leftFolderExists)
             {
@@ -538,9 +538,9 @@ namespace nsync
         /// Checks if folders are similar
         /// </summary>
         /// <returns>Return a boolean to determine if folder paths are similar</returns>
-        private bool SimilarFolderCheck()
+        private bool IsFoldersSimilar()
         {
-            if (synchronizer.CheckSimilarFolder())
+            if (synchronizer.IsFoldersSimilar())
             {
                 helper.Show(nsync.Properties.Resources.similarFolders, 5, HelperWindow.windowStartPosition.windowTop);
                 return true;
@@ -552,14 +552,14 @@ namespace nsync
         /// Checks if one folder is a subfolder of another
         /// </summary>
         /// <returns>Return a boolean to determine if one folder is subfolder of another</returns>
-        private bool SubFolderCheck()
+        private bool IsFolderSubfolder()
         {
-            if (!synchronizer.CheckSubFolder())
+            if (synchronizer.IsFolderSubfolder())
             {
                 helper.Show(nsync.Properties.Resources.subfolderOfFolder, 5, HelperWindow.windowStartPosition.windowTop);
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
 
         /// <summary>
@@ -591,7 +591,7 @@ namespace nsync
             if (!hasLeftPath || !hasRightPath)
                 return false;
 
-            if (!FolderCheck() || SimilarFolderCheck() || !SubFolderCheck())
+            if (!IsFolderExist() || IsFoldersSimilar() || IsFolderSubfolder())
             {
                 //SQ ShowRemovableDrives(LeftText.Text, "left");
                 //SQ ShowRemovableDrives(RightText.Text, "right");
@@ -645,33 +645,27 @@ namespace nsync
             if (folderPaths.Count == 0)
                 return;
 
-            //SQ LeftText.Text = folderPaths[0];
-            actualLeftPath = folderPaths[0]; //SQ
-            LeftText.Text = ShortenText(actualLeftPath); //SQ
-            //SQ synchronizer.LeftPath = LeftText.Text;
-            synchronizer.LeftPath = actualLeftPath; //SQ
+            // Setup folder paths in SyncEngine and in LeftText+RightText
+            actualLeftPath = folderPaths[0];
+            LeftText.Text = ShortenText(actualLeftPath);
+            synchronizer.LeftPath = actualLeftPath;
+            actualRightPath = folderPaths[1];
+            RightText.Text = ShortenText(actualRightPath);
+            synchronizer.RightPath = actualRightPath;
 
-            //SQ RightText.Text = folderPaths[1];
-            actualRightPath = folderPaths[1]; //SQ
-            RightText.Text = ShortenText(actualRightPath); //SQ
-            //SQ synchronizer.RightPath = RightText.Text;
-            synchronizer.RightPath = actualRightPath; //SQ
-
-            if (actualLeftPath == NULL_STRING) //SQ (LeftText.Text == NULL_STRING)
+            if (actualLeftPath == NULL_STRING)
             {
-                //SQ LeftText.Text = nsync.Properties.Resources.panelText;
-                actualLeftPath = nsync.Properties.Resources.panelText; //SQ
-                LeftText.Text = nsync.Properties.Resources.panelText; //SQ
+                actualLeftPath = nsync.Properties.Resources.panelText;
+                LeftText.Text = nsync.Properties.Resources.panelText;
                 hasLeftPath = false;
             }
             else
                 hasLeftPath = true;
 
-            if (actualRightPath == NULL_STRING) //SQ (RightText.Text == NULL_STRING)
+            if (actualRightPath == NULL_STRING)
             {
-                //SQ RightText.Text = nsync.Properties.Resources.panelText;
-                actualRightPath = nsync.Properties.Resources.panelText; //SQ
-                RightText.Text = nsync.Properties.Resources.panelText; //SQ
+                actualRightPath = nsync.Properties.Resources.panelText;
+                RightText.Text = nsync.Properties.Resources.panelText;
                 hasRightPath = false;
             }
             else
@@ -1001,7 +995,7 @@ namespace nsync
                 LabelProgressPercent.Visibility = Visibility.Hidden;
                 ImageTeam14Over.OpacityMask = blankOpacityMask;
                 ButtonSync.Visibility = Visibility.Hidden;
-                FolderCheck();
+                IsFolderExist();
                 return;
             }
 

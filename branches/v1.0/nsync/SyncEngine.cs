@@ -399,9 +399,9 @@ namespace nsync
         /// Asks IntelligentManager to check if a folder is subfolder of another folder
         /// </summary>
         /// <returns></returns>
-        public bool CheckSubFolder()
+        public bool IsFolderSubfolder()
         {
-            return !intelligentManager.IsFolderSubFolder(leftPath, rightPath);
+            return intelligentManager.IsFolderSubFolder(leftPath, rightPath);
         }
 
         /// <summary>
@@ -421,7 +421,7 @@ namespace nsync
         /// </summary>
         /// <param name="leftOrRight">This parameter indicates the left or right folder to be checked</param>
         /// <returns>Returns the result of the check in a boolean</returns>
-        public bool CheckFolderExists(string leftOrRight)
+        public bool IsFolderExists(string leftOrRight)
         {
             if (leftOrRight == "left" || leftOrRight == "Left")
             {
@@ -438,7 +438,7 @@ namespace nsync
         /// Asks IntelligentManager to check if the two folder paths are similar
         /// </summary>
         /// <returns>Returns the result of the check in a boolean</returns>
-        public bool CheckSimilarFolder()
+        public bool IsFoldersSimilar()
         {
             return intelligentManager.IsFoldersSimilar(leftPath, rightPath);
         }
