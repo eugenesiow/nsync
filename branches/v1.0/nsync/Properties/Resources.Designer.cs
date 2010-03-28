@@ -61,6 +61,15 @@ namespace nsync.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insufficient access rights to the folders..
+        /// </summary>
+        public static string accessRightsInsufficient {
+            get {
+                return ResourceManager.GetString("accessRightsInsufficient", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Both the selected folders do not exist..
         /// </summary>
         public static string bothFoldersNotExist {
@@ -75,6 +84,15 @@ namespace nsync.Properties {
         public static string closeToolTip {
             get {
                 return ResourceManager.GetString("closeToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again..
+        /// </summary>
+        public static string defaultErrorMessage {
+            get {
+                return ResourceManager.GetString("defaultErrorMessage", resourceCulture);
             }
         }
         
@@ -124,6 +142,15 @@ namespace nsync.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Left folder has insufficient disk space..
+        /// </summary>
+        public static string leftFolderInsufficientDiskSpace {
+            get {
+                return ResourceManager.GetString("leftFolderInsufficientDiskSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The left folder does not exist..
         /// </summary>
         public static string leftFolderNotExist {
@@ -165,6 +192,15 @@ namespace nsync.Properties {
         public static string panelText {
             get {
                 return ResourceManager.GetString("panelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right folder has insufficient disk space..
+        /// </summary>
+        public static string rightFolderInsufficientDiskSpace {
+            get {
+                return ResourceManager.GetString("rightFolderInsufficientDiskSpace", resourceCulture);
             }
         }
         

@@ -57,6 +57,11 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="P:nsync.Properties.Resources.accessRightsInsufficient">
+            <summary>
+              Looks up a localized string similar to Insufficient access rights to the folders..
+            </summary>
+        </member>
         <member name="P:nsync.Properties.Resources.bothFoldersNotExist">
             <summary>
               Looks up a localized string similar to Both the selected folders do not exist..
@@ -65,6 +70,11 @@
         <member name="P:nsync.Properties.Resources.closeToolTip">
             <summary>
               Looks up a localized string similar to Close.
+            </summary>
+        </member>
+        <member name="P:nsync.Properties.Resources.defaultErrorMessage">
+            <summary>
+              Looks up a localized string similar to Please try again..
             </summary>
         </member>
         <member name="P:nsync.Properties.Resources.folderExplorerText">
@@ -92,6 +102,11 @@
               Looks up a localized string similar to Insufficient disk space.
             </summary>
         </member>
+        <member name="P:nsync.Properties.Resources.leftFolderInsufficientDiskSpace">
+            <summary>
+              Looks up a localized string similar to Left folder has insufficient disk space..
+            </summary>
+        </member>
         <member name="P:nsync.Properties.Resources.leftFolderNotExist">
             <summary>
               Looks up a localized string similar to The left folder does not exist..
@@ -115,6 +130,11 @@
         <member name="P:nsync.Properties.Resources.panelText">
             <summary>
               Looks up a localized string similar to Drag &amp; Drop Folders Here.
+            </summary>
+        </member>
+        <member name="P:nsync.Properties.Resources.rightFolderInsufficientDiskSpace">
+            <summary>
+              Looks up a localized string similar to Right folder has insufficient disk space..
             </summary>
         </member>
         <member name="P:nsync.Properties.Resources.rightFolderNotExist">

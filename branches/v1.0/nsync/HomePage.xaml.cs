@@ -568,7 +568,7 @@ namespace nsync
         /// <returns>Return a boolean to determine if sync button should appear</returns>
         private bool ShowSync()
         {
-            helper.HideWindow();
+            //helper.HideWindow();
 
             LabelProgress.Visibility = Visibility.Hidden;
             LabelProgressPercent.Visibility = Visibility.Hidden;
@@ -1009,6 +1009,9 @@ namespace nsync
             {
                 ImageTeam14Over.OpacityMask = blankOpacityMask;
 
+                SaveFolderPaths();
+                ReloadFolderPaths();
+
                 LabelProgress.Content = MESSAGE_SYNC_COMPLETED;
                 LabelProgressPercent.Content = "100 %";
                 helper.Show(nsync.Properties.Resources.synchronizedFolders, 5, HelperWindow.windowStartPosition.windowTop);
@@ -1042,18 +1045,25 @@ namespace nsync
                 switch ((int)e.Result)
                 {
                     case 1:
-                        helper.Show("Right folder has insufficient disk space.", 5, HelperWindow.windowStartPosition.windowTop);
+                        helper.Show(nsync.Properties.Resources.rightFolderInsufficientDiskSpace, 5, HelperWindow.windowStartPosition.windowTop);
                         break;
                     case 2:
-                        helper.Show("Left folder has insufficient disk space.", 5, HelperWindow.windowStartPosition.windowTop);
+                        helper.Show(nsync.Properties.Resources.leftFolderInsufficientDiskSpace, 5, HelperWindow.windowStartPosition.windowTop);
                         break;
                     case 3:
-                        helper.Show("The folders to be synchronized is locked.", 5, HelperWindow.windowStartPosition.windowTop);
+                        helper.Show(nsync.Properties.Resources.accessRightsInsufficient, 5, HelperWindow.windowStartPosition.windowTop);
                         break;
                     default:
-                        helper.Show("Please try again!", 5, HelperWindow.windowStartPosition.windowTop);
+                        helper.Show(nsync.Properties.Resources.defaultErrorMessage, 5, HelperWindow.windowStartPosition.windowTop);
                         break;
                 }
+
+                // Unsuccessful sync jobs folders will be saved in MRU
+                // This is to give users convenience so that
+                // They can just click on MRU to retrieve the folder pairs again
+                SaveFolderPaths();
+                ReloadFolderPaths();
+
                 LabelProgress.Visibility = Visibility.Visible;
                 LabelProgress.Content = MESSAGE_ERROR_DETECTED;
                 LabelProgressPercent.Visibility = Visibility.Hidden;

@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="accessRightsInsufficient" xml:space="preserve">
+    <value>Insufficient access rights to the folders.</value>
+  </data>
   <data name="bothFoldersNotExist" xml:space="preserve">
     <value>Both the selected folders do not exist.</value>
   </data>
   <data name="closeToolTip" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="defaultErrorMessage" xml:space="preserve">
+    <value>Please try again.</value>
   </data>
   <data name="folderExplorerText" xml:space="preserve">
     <value>Select a folder to synchronise with nsync.</value>
@@ -138,6 +144,9 @@
   <data name="insufficientDiskSpace" xml:space="preserve">
     <value>Insufficient disk space</value>
   </data>
+  <data name="leftFolderInsufficientDiskSpace" xml:space="preserve">
+    <value>Left folder has insufficient disk space.</value>
+  </data>
   <data name="leftFolderNotExist" xml:space="preserve">
     <value>The left folder does not exist.</value>
   </data>
@@ -152,6 +161,9 @@
   </data>
   <data name="panelText" xml:space="preserve">
     <value>Drag &amp; Drop Folders Here</value>
+  </data>
+  <data name="rightFolderInsufficientDiskSpace" xml:space="preserve">
+    <value>Right folder has insufficient disk space.</value>
   </data>
   <data name="rightFolderNotExist" xml:space="preserve">
     <value>The right folder does not exist.</value>
