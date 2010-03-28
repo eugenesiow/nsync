@@ -1036,34 +1036,40 @@ namespace nsync
         /// <param name="e"></param>
         private void backgroundWorkerForPreSync_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            try
-            {
-                if (!(bool)e.Result)
+            if ((int)e.Result > 0)
+                EnableInterface(true);
+                switch ((int)e.Result)
                 {
-                    EnableInterface(true);
-                    helper.Show(nsync.Properties.Resources.insufficientDiskSpace, 5, HelperWindow.windowStartPosition.windowTop);
-                    LabelProgress.Visibility = Visibility.Visible;
-                    LabelProgress.Content = MESSAGE_ERROR_DETECTED;
-                    LabelProgressPercent.Visibility = Visibility.Hidden;
-                    // Users should be able click the sync button again,
-                    // in case they've freed some disk space
-                    ButtonSync.Visibility = Visibility.Visible;
-                    FolderCheck();
-                    return;
+                    case 1:
+                        helper.Show("Right folder has insufficient disk space.", 5, HelperWindow.windowStartPosition.windowTop);
+                        break;
+                    case 2:
+                        helper.Show("Left folder has insufficient disk space.", 5, HelperWindow.windowStartPosition.windowTop);
+                        break;
+                    case 3:
+                        helper.Show("The folders to be synchronized is locked.", 5, HelperWindow.windowStartPosition.windowTop);
+                        break;
+                    default:
+                        helper.Show("Please try again!", 5, HelperWindow.windowStartPosition.windowTop);
+                        break;
                 }
-
-                EnableInterface(false);
-
-                LabelProgress.Content = MESSAGE_SYNCING_FOLDERS;
-                LabelProgressPercent.Visibility = Visibility.Visible;
-                LabelProgressPercent.Content = "0 %";
-                //if (!synchronizer.AreFoldersSync()) trackBack.BackupFolders(LeftText.Text, RightText.Text);
-                synchronizer.StartSync();
+                LabelProgress.Visibility = Visibility.Visible;
+                LabelProgress.Content = MESSAGE_ERROR_DETECTED;
+                LabelProgressPercent.Visibility = Visibility.Hidden;
+                // Users should be able click the sync button again,
+                // in case they've freed some disk space
+                ButtonSync.Visibility = Visibility.Visible;
+                //FolderCheck();
+                return;
             }
-            catch(Exception err)
-            {
-                MessageBox.Show("backgroundWorkerForPreSync_RunWorkerCompleted");
-            }
+
+            EnableInterface(false);
+
+            LabelProgress.Content = MESSAGE_SYNCING_FOLDERS;
+            LabelProgressPercent.Visibility = Visibility.Visible;
+            LabelProgressPercent.Content = "0 %";
+            //if (!synchronizer.AreFoldersSync()) trackBack.BackupFolders(LeftText.Text, RightText.Text);
+            synchronizer.StartSync();
         }
 
         #endregion

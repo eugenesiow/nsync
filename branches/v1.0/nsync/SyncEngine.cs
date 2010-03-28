@@ -249,15 +249,84 @@ namespace nsync
         /// <param name="e"></param>
         private void backgroundWorkerForPreSync_DoWork(object sender, DoWorkEventArgs e)
         {
-            e.Result = InternalPreSync();
+            //try
+            //{
+                e.Result = InternalPreSync();
+            //}
+
+            // WILL GET EXCEPTION FROM InternalPreSync()
+            // BUT WHERE THIS EXCEPTION GETS THROWN TO IF I THROW IT?
+            //catch(System.UnauthorizedAccessException ex)
+            //{
+            //    //throw;
+            //}
+        }
+
+        /// <summary>
+        /// Gets backgroundWorkerForPreSync to do presync preparations
+        /// </summary>
+        public void PreSync()
+        {
+            backgroundWorkerForPreSync.RunWorkerAsync();
+        }
+
+        /// <summary>
+        /// Get the real synchronization process to start
+        /// </summary>
+        public void StartSync()
+        {
+            // Start the asynchronous operation.
+            backgroundWorkerForSync.RunWorkerAsync();
+        }
+
+        /// <summary>
+        /// Does actual presync preparations
+        /// </summary>
+        /// <returns></returns>
+        private int InternalPreSync()
+        {
             try
             {
-                e.Result = InternalPreSync();
+                // Reset all counters before every synchronization
+                countChanges = 0;
+                countDoneChanges = 0;
+                freeDiskSpaceForLeft = 0;
+                freeDiskSpaceForRight = 0;
+                diskSpaceNeededForLeft = 0;
+                diskSpaceNeededForRight = 0;
+                isCheckForLeftDone = false;
+
+                // Configure sync options
+                FileSyncOptions options = FileSyncOptions.ExplicitDetectChanges |
+                    FileSyncOptions.RecycleConflictLoserFiles |
+                    FileSyncOptions.RecycleDeletedFiles |
+                    FileSyncOptions.RecyclePreviousFileOnUpdates;
+
+
+                // Configure sync filters
+                FileSyncScopeFilter filter = new FileSyncScopeFilter();
+
+                // Update metadata of the folders before sync to
+                // check for any changes or modifications
+                DetectChangesonFileSystemReplica(leftPath, filter, options);
+                DetectChangesonFileSystemReplica(rightPath, filter, options);
+
+                // Start the 2-way sync
+                // this one when return false, it means not enough disk space
+                if (!SyncFileSystemReplicasOneWay(leftPath, rightPath, null, options, true))
+                    return 1;
+                if (!SyncFileSystemReplicasOneWay(rightPath, leftPath, null, options, true))
+                    return 2;
+
+                return 0;
             }
-            catch
+            catch (System.UnauthorizedAccessException e)
             {
-                MessageBox.Show("backgroundWorkerForPreSync_DoWork");
-                //throw;
+                return 3;
+            }
+            catch // catch other remaining unknown errors
+            {
+                return 4;
             }
         }
 
@@ -324,72 +393,6 @@ namespace nsync
         {
             get { return rightPath; }
             set { rightPath = value; }
-        }
-
-        /// <summary>
-        /// Gets backgroundWorkerForPreSync to do presync preparations
-        /// </summary>
-        public void PreSync()
-        {
-            backgroundWorkerForPreSync.RunWorkerAsync();
-        }
-        
-        /// <summary>
-        /// Does actual presync preparations
-        /// </summary>
-        /// <returns></returns>
-        private bool InternalPreSync()
-        {
-            try
-            {
-                // Reset all counters before every synchronization
-                countChanges = 0;
-                countDoneChanges = 0;
-                freeDiskSpaceForLeft = 0;
-                freeDiskSpaceForRight = 0;
-                diskSpaceNeededForLeft = 0;
-                diskSpaceNeededForRight = 0;
-                isCheckForLeftDone = false;
-
-                // Configure sync options
-                FileSyncOptions options = FileSyncOptions.ExplicitDetectChanges |
-                    FileSyncOptions.RecycleConflictLoserFiles |
-                    FileSyncOptions.RecycleDeletedFiles |
-                    FileSyncOptions.RecyclePreviousFileOnUpdates;
-
-                
-                // Configure sync filters
-                FileSyncScopeFilter filter = new FileSyncScopeFilter();
-
-                // Update metadata of the folders before sync to
-                // check for any changes or modifications
-                DetectChangesonFileSystemReplica(leftPath, filter, options);
-                DetectChangesonFileSystemReplica(rightPath, filter, options);
-
-                // Start the 2-way sync
-                // this one when return false, it means not enough disk space
-                if (!SyncFileSystemReplicasOneWay(leftPath, rightPath, null, options, true))
-                    return false;
-                if (!SyncFileSystemReplicasOneWay(rightPath, leftPath, null, options, true))
-                    return false;
-
-                return true;
-            }
-            catch (Exception e)
-            {
-                if(e.Message.Contains("Access is denied"))
-                    MessageBox.Show("START: InternalPreSync()" + e.Message);
-                throw e;
-            }
-        }
-
-        /// <summary>
-        /// Get the real synchronization process to start
-        /// </summary>
-        public void StartSync()
-        {
-            // Start the asynchronous operation.
-            backgroundWorkerForSync.RunWorkerAsync();
         }
 
         /// <summary>
