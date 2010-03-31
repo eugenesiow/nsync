@@ -46,4 +46,4 @@
 = Settings Page =
 
   * Allows the users to enable/disable features and change settings according to their wish. For example, users can choose to have the helper window (notifications) on/off.
-  * Future options would be to allow users to toggle features like Track Back (v2.0), intelligence (v2.0), UI settings like transparency/font etc (v2.0)
+  * Future options would be to allow users to toggle features like Track Back (v2.0), intelligence (v2.0) etc
