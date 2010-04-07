@@ -2,19 +2,19 @@
 
 = The Main Interface =
 
-http://nsync.googlecode.com/files/MainInterface.jpg
+http://nsync.googlecode.com/svn/wiki/images/MainInterface.jpg
 
 
 = Notifications from Intelligent Path Management =
 
-http://nsync.googlecode.com/files/notifications.jpg
+http://nsync.googlecode.com/svn/wiki/images/notifications.jpg
 
 
 = Sync in progress (with Progress Bar) =
 
-http://nsync.googlecode.com/files/nsync_in_progress(Screenshots).jpg
+http://nsync.googlecode.com/svn/wiki/images/nsync_in_progress(Screenshots).jpg
 
 
 = The Settings Page =
 
-http://nsync.googlecode.com/files/SettingsPage.jpg
+http://nsync.googlecode.com/svn/wiki/images/SettingsPage.jpg
