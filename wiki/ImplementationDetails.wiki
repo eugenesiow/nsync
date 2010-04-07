@@ -3,30 +3,30 @@
 = Architecture Diagram =
 
 
-http://nsync.googlecode.com/files/v0.9%20architecture.jpg
+http://nsync.googlecode.com/svn/wiki/images/v0.9%20architecture.jpg
 
 
 = Use Case Diagram =
 
-http://nsync.googlecode.com/files/useCaseDiag_v0.9.jpg
+http://nsync.googlecode.com/svn/wiki/images/useCaseDiag_v0.9.jpg
 
 
 = Domain Model =
 
-http://nsync.googlecode.com/files/DomailModel.jpg
+http://nsync.googlecode.com/svn/wiki/images/DomailModel.jpg
 
 
 = Activity Diagram =
 
-http://nsync.googlecode.com/files/ActivityDiag1.jpg
-http://nsync.googlecode.com/files/ActivityDiag2.jpg
+http://nsync.googlecode.com/svn/wiki/images/ActivityDiag1.jpg
+http://nsync.googlecode.com/svn/wiki/images/ActivityDiag2.jpg
 
 
 = Sequence Diagram =
 
-http://nsync.googlecode.com/files/SequenceDiagram.jpg
+http://nsync.googlecode.com/svn/wiki/images/SequenceDiagram.jpg
 
 
 = Class Diagram =
 
-http://nsync.googlecode.com/files/ClassDiagram.jpg
+http://nsync.googlecode.com/svn/wiki/images/ClassDiagram.jpg
