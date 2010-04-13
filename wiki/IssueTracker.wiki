@@ -1,5 +1,5 @@
 #summary How To Use Issue Tracker To Report Bugs
-#labels Featured
+#labels Phase-QA
 
 = How do I report bugs found on nsync? =
 
