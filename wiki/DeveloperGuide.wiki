@@ -1,4 +1,5 @@
 #summary A developer's definitive guide for diving into nsync internals
+#labels Featured
 
 <wiki:toc max_depth="2" />
 
