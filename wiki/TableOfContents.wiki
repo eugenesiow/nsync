@@ -2,6 +2,7 @@
 #labels Featured
   * [nsync nsync] 
     * [nsyncFeatures Features]
+       * [VisualPreview]
        * [Exclude]
        * [TrackBack]
     * [nsyncFAQ FAQ] 
