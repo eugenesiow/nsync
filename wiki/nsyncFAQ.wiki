@@ -16,4 +16,4 @@ Never tried synchronization before? nsync is your best shot at falling in love w
 
 = Is an internet connection required during installation of nsync? =
 
-Yes, an internet connection is required to download the Microsoft .NET framework during nsync installation if you do not already have the latest version (3.5 SP1)
+Yes, an internet connection is required to download the [http://www.microsoft.com/NET/ Microsoft .NET] framework during nsync installation if you do not already have the latest version (3.5 SP1)
