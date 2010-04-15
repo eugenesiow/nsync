@@ -3,9 +3,9 @@
 <wiki:toc max_depth="1" />
 
 = Synchronization =
-  * 2-way synchronization (Sync two folders)
+  * 2-way [Synchronization synchronization] (Sync two folders)
   * Update functionality (update both folders with the latest versions of documents and files)
-  * Space check (checks if there is available space for synchronization)
+  * Diskspace check (checks if there is available space for synchronization)
 
 = Easy to use, Intuitive, fast and attractive interface =
 
