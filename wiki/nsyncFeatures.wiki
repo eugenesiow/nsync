@@ -27,8 +27,8 @@
   * Use of tooltip makes it more intuitive and self explanatory for the user. The tooltip in Visual Preview displays the full path for each file waiting to be synced in the left/right folder.
   * We believe in a minimalistic design with less cluttered features/buttons, hence we decided to have the “Cancel sync” button in the same place as “Sync button”.
   * Use of colour coding makes it more readable and clearer to the users. Example:
-   - In Visual Preview, folders are differentiated from files using colour coding. 
-   - In Exclude, colour coding is used to differentiate specific file types (based on their extension); individual files and folders dragged in; and other folders dragged in that are not present in any of the left/right folder.
+   # In Visual Preview, folders are differentiated from files using colour coding. 
+   # In Exclude, colour coding is used to differentiate specific file types (based on their extension); individual files and folders dragged in; and other folders dragged in that are not present in any of the left/right folder.
 
 
 = nsync remembers what you sync =
