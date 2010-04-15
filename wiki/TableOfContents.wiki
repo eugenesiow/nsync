@@ -4,7 +4,7 @@
     * [nsyncFAQ FAQ] 
     * [Screenshots Screenshots]
     * [IssueTracker Issue Tracker]
-	* [TrackBack]
+    * [TrackBack]
     * [Getnsync Add a 'get nsync' stamp]
   * [DeveloperGuide Developer Guide] 
     * [CodingGuidelines Coding Guidelines]
