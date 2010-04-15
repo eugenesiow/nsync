@@ -44,7 +44,8 @@
   * It checks and reports if one or more of the selected folders has been moved/does not exist by displaying an appropriate message.
   * nsync is capable of identifying shortcuts and thanks to its intelligence, that it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
   * If the user chooses to set the duration for helper window to be 0 sec (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
-  * nsync syncs the file on the opposite side in the correct folder hierarchy without even bothering the user to think or worry about it. Example:
+  * nsync syncs the file on the opposite side in the correct folder hierarchy without even bothering the user to think or worry about it.
+Example:
 <br>
 - User syncs 2 folders, namely Left Folder and Right Folder 
 <br>
