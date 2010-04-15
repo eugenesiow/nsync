@@ -51,11 +51,8 @@
   * Users can choose to enable/disable the Exclude window
   * Users can choose the duration for helper/notification window to appear ranging from 0 sec (not at all) to infinity (doesn’t go away on its own – need to be manually closed)
   * Other options available are :
-Clear Meta Data – It clears the metadata file from both the folders (if it exists, that is, if the folders have been synced before)
-
-Reset Settings – It forgets everything (track back versions, left and right folder etc), resets the settings, and brings everything to the default option equivalent to the initial installation of nsync
-
-Open Log Folder – Opens the folder where you can see the log/summary report
-
-Clear Log Folder – Clears the log/summary report from the log folder.
+    # Clear Meta Data – It clears the metadata file from both the folders (if it exists, that is, if the folders have been synced before)
+    # Reset Settings – It forgets everything (track back versions, left and right folder etc), resets the settings, and brings everything to the default option equivalent to the initial installation of nsync
+    # Open Log Folder – Opens the folder where you can see the log/summary report
+    # Clear Log Folder – Clears the log/summary report from the log folder.
   * The default settings include – Disabled Track Back, Disabled Exclude, and timer for notification window set to 5 sec.
