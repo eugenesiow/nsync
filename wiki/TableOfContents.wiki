@@ -1,5 +1,4 @@
 #summary Sidebar Table of Contents
-#labels Featured
   * [nsync nsync] 
     * [nsyncFeatures Features] 
     * [nsyncFAQ FAQ] 
