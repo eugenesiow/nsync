@@ -18,18 +18,19 @@ nsync does not aim to provide many advanced features, thereby compromising with 
 
 Here we present to you not just our product, but our vision too. We hope to make this yours as well and we promise it’ll take just 3 minutes of your time!
 
-* *Be minimalistic*. The less there is on the interface, the better. Put what’s really needed up there.
-* Don’t prompt, make intelligent guesses. Notify the users that we’ve made a guess and allow them to make their own decisions. Do this gently and unassumingly.
-* Make it pretty. Packaging is important; make it eye-catching but not overly or offensively so.
-* Understandable. No manual or instructions should be needed.
-* Fast. Synchronization has to be fast.
-* Stick to the above principles! We are engineers, designers and programmers, but above all, we’re users too. Put the user first.
+ * *Be minimalistic* 
+  * The less there is on the interface, the better. Put what’s really needed up there.
+ * *Don’t prompt, make intelligent guesses*
+  * Notify the users that we’ve made a guess and allow them to make their own decisions. Do this gently and unassumingly.
+ * *Make it pretty*
+  * Packaging is important; make it eye-catching but not overly or offensively so.
+ * *Understandable* 
+  * No manual or instructions should be needed.
+ * *Fast*
+  * Synchronization has to be fast.
+ * *Stick to the above principles!* 
+  *We are engineers, designers and programmers, but above all, we’re users too. Put the user first.
 
-
-= Coding Guidelines =
-
-See [CodingGuidelines Coding Guidelines].
-
-= Using TortoiseSVN =
-
-See [TortoiseSVN TortoiseSVN].
+== Functionality Overview ==
+=== V0.0 ===
+This was the most basic nsync tool, with a 2-way synchronization function; an easy-to-use, intuitive, fast and attractive interface. The version is already out. The functionalities of the few implemented features in this version are listed below in detail:
