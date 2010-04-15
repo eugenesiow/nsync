@@ -4,17 +4,18 @@
 
 http://nsync.googlecode.com/svn/wiki/images/MainInterface.jpg
 
-
 = Notifications from Intelligent Path Management =
 
 http://nsync.googlecode.com/svn/wiki/images/notifications.jpg
-
 
 = Sync in progress (with Progress Bar) =
 
 http://nsync.googlecode.com/svn/wiki/images/nsync_in_progress(Screenshots).jpg
 
-
 = The Settings Page =
 
 http://nsync.googlecode.com/svn/wiki/images/SettingsPage.jpg
+
+= The TrackBack Page =
+
+http://nsync.googlecode.com/svn/wiki/images/trackback.png
