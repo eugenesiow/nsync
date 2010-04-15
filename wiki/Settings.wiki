@@ -1,4 +1,4 @@
-#summary Settings.
+#summary Customise various different features in nsync.
 
 = Introduction =
 
