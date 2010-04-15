@@ -1,4 +1,5 @@
 #summary Sidebar Table of Contents
+#labels Featured
   * [nsync nsync] 
     * [nsyncFeatures Features] 
     * [nsyncFAQ FAQ] 
@@ -7,6 +8,7 @@
     * [TrackBack]
     * [Getnsync Add a 'get nsync' stamp]
   * [DeveloperGuide Developer Guide] 
+    * [ImplementationDetails Implementation Details]
     * [CodingGuidelines Coding Guidelines]
     * [TortoiseSVN]
   * [Synchronization Synchronization 101]
