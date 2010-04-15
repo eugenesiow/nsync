@@ -9,6 +9,8 @@ For general feedback, do contact us via our [http://groups.google.com/group/nsyn
 
 === To View Issues ===
 
+https://nsync.googlecode.com/svn/wiki/images/IssueTrackerScreen1.JPG
+
 Go to the 'Issues' Tab. In the 'search' combobox, select All Issues and click search. It will display all reported issues and their current status.
 
 == Here is how you can inform us of such problems ==
