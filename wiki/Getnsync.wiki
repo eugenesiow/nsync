@@ -1,6 +1,15 @@
 #summary Promote nsync by adding a 'get nsync' stamp
 = How to add a 'get nsync' stamp? =
-{{{<a href="http://code.google.com/p/nsync/downloads/list"><img src="https://nsync.googlecode.com/svn/wiki/images/getnsync.png" border="0" alt="Get nsync!"></a>}}}
 
-= Preview =
+== HTML ==
+
+Add the following HTML block to your website or blog and help to publicise nsync!
+
+{{{
+<a href="http://code.google.com/p/nsync/downloads/list">
+<img src="https://nsync.googlecode.com/svn/wiki/images/getnsync.png" border="0" alt="Get nsync!">
+</a>
+}}}
+
+== Preview ==
 [http://code.google.com/p/nsync/downloads/list https://nsync.googlecode.com/svn/wiki/images/getnsync.png]
