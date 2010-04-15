@@ -49,12 +49,12 @@ Example:
 - User syncs 2 folders, namely LeftFolder and RightFolder.
 - User updates a subfolder named A inside LeftFolder and wants to propagate these changes in the subfolder A of RightFolder.
 - User drags in LeftFolder/A in the left, the right side automatically changes to RightFolder/A, hence only the required folders would be synced again and not the full parent folders.
-  * nsync remembers the removable drive sync – If it’s a thumb drive or any other removable drive, nsync remembers the last synced folder in the removable drive and restores back the folder once the drive is plugged in again under certain conditions (there are no files in the removable drive, only folders exist). 
+  * nsync remembers the removable drive sync – If it’s a thumb drive or any other removable drive, nsync remembers the last synced folder in the removable drive and restores back the folder once the drive is plugged in again under certain conditions (there are no files in the removable drive, only folders exist).
 Example:
-  - User syncs G:/test1 and C:/Program files 
-  - User now syncs G:/test2 and C:/Program files 
-  - Now the user syncs some other folder pairs excluding the removable drive G: 
-  - At this point, if user drags in G: again, the last synced folder would appear, that is, G:/test2 would appear. 
+    # User syncs G:/test1 and C:/Program files
+    # User now syncs G:/test2 and C:/Program files 
+    # Now the user syncs some other folder pairs excluding the removable drive G: 
+    # At this point, if user drags in G: again, the last synced folder would appear, that is, G:/test2 would appear. 
 This only happens under certain conditions (there aren’t any files but just folders in the removable drive) 
 Reason: We don’t want to outsmart the user because there could be a case when he actually wants to sync the files present in G:/, so it isn’t appropriate to make G:/test2 appear when actually just G:/ is required.
   * nsync recognises a removable drive by its serial number, so even if we change the drive name, nsync recognises it and remembers its last synced folder.
