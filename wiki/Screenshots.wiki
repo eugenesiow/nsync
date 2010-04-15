@@ -40,6 +40,6 @@ The visual preview window showing changes to both folders
 
 = The Exclude Window =
 
-http://nsync.googlecode.com/svn/wiki/images/exclude.JPG
+http://nsync.googlecode.com/svn/wiki/images/exclude%20-%20with%20items.JPG
 
 The exclude window showing a few excluded files, filetypes and subfolders
