@@ -5,6 +5,7 @@
        * [VisualPreview]
        * [Exclude]
        * [TrackBack]
+       * [Settings]
     * [nsyncFAQ FAQ] 
     * [Screenshots Screenshots]
     * [IssueTracker Issue Tracker] 
