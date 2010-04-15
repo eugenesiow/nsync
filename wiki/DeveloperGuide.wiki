@@ -6,9 +6,9 @@
 
 This guide/manual is for developers who want to dive into the source code of nsync.
 
-= Developer Guide V1.0 =
+= Developer Guide V2.0 =
 
-[https://docs.google.com/fileview?id=0B1jMaaSCVn5IZDFiZThmMTItM2EzMy00MWQ0LTkyYzktOGVhZWMxOGRkYjQ0&hl=en_GB View] on Google Docs.
+[hhttps://docs.google.com/fileview?id=0B1jMaaSCVn5INmQ4MmQwYmEtMGY5OC00MWFmLTg5YWItYzlhY2Y0MTQ2NDM4&hl=en_GB View] on Google Docs.
 
 = Coding Guidelines =
 
