@@ -1,4 +1,4 @@
-#summary Settings.
+#summary Settings. The User Control.
 
 = Introduction =
 
