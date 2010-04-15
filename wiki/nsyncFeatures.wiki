@@ -80,8 +80,12 @@ Reason: We don’t want to outsmart the user because there could be a case when 
   * Visual Preview remembers the last filter option (Show changes for Both / Left / Right folder) for each folder pair that was synced.
   * nsync detects folders/files that are locked, shows a helper window message saying which file/folder is locked, and then closes elegantly, instead of crashing like other software. Hence nsync doesn’t crash if %APPDATA%\nsync or any of its subfolder/files are locked.
 
-= Settings Page =
+= Track Back =
+  * Before every sync session, a backup file of the folder pair is created for restoration purposes. By Track Back we propose to have a time machine kind of feature that allows you to restore your files/folders of a particular day, e.g.: Restore the folder version as on last Monday before sync was carried out on it.
+  * Track Back enables the user to restore the pre sync state of the last 5 saved folder pair versions. It all happens in just 1 click. Track Back is disabled by default. A change in the Settings is required to enable it.
+  * The user has the option to either restore only the left folder or the right folder or both
 
+= Settings Page =
   * Allows the users to enable/disable features and change settings according to their wish. For example, users can choose to have the helper window (notifications) on/off.
   * Future options would be to allow users to toggle features like Track Back (v2.0), intelligence (v2.0) etc
   * Users can choose to enable/disable the Track Back feature
