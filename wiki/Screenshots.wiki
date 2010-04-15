@@ -16,6 +16,14 @@ http://nsync.googlecode.com/svn/wiki/images/nsync_in_progress(Screenshots).jpg
 
 http://nsync.googlecode.com/svn/wiki/images/SettingsPage.jpg
 
-= The TrackBack Page =
+= The !TrackBack Page =
 
 http://nsync.googlecode.com/svn/wiki/images/trackback.png
+
+= The Visual Preview Window =
+
+http://nsync.googlecode.com/svn/wiki/images/visualpreview.jpg
+
+= The Exclude Window =
+
+http://nsync.googlecode.com/svn/wiki/images/exclude.jpg
