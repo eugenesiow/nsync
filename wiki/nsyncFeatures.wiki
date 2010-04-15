@@ -85,6 +85,14 @@ Reason: We don’t want to outsmart the user because there could be a case when 
   * Track Back enables the user to restore the pre sync state of the last 5 saved folder pair versions. It all happens in just 1 click. Track Back is disabled by default. A change in the Settings is required to enable it.
   * The user has the option to either restore only the left folder or the right folder or both
 
+= Visual Preview =
+  * The users can click a preview button on the home page (next to Sync button) which shows them the post sync state of either both the folders or just the right folder or just the left folder. The possible actions could be create / delete / rename / change /no change (denoted by blank)
+
+= Exclude =
+  * The users can drag and drop files to be excluded from the sync operation.
+  * The users can also select files of specific types to be excluded based on their extension.  Clicking the close button directs you to the home page where you have to click sync again if you wish to. While clicking the continue button continues with the sync operation thereby excluding the mentioned files.
+  * By default, this feature is disabled. Once the user enables it in the Settings page, this window automatically comes whenever the user clicks the sync button.
+
 = Settings Page =
   * Allows the users to enable/disable features and change settings according to their wish. For example, users can choose to have the helper window (notifications) on/off.
   * Future options would be to allow users to toggle features like Track Back (v2.0), intelligence (v2.0) etc
@@ -97,3 +105,9 @@ Reason: We don’t want to outsmart the user because there could be a case when 
     # Open Log Folder – Opens the folder where you can see the log/summary report
     # Clear Log Folder – Clears the log/summary report from the log folder.
   * The default settings include – Disabled Track Back, Disabled Exclude, and timer for notification window set to 5 sec.
+
+= Log/summary report file =
+  * Produces a summary report at the end of the sync operation. nsync itself prompts the user to see the report if there is a renaming conflict else the user has to manually go to the log folder to see the report. The report displays the outcome of the sync operation (successful/unsuccessful) and states the cause of the conflict (if any).
+
+= Debug Logger =
+  * We have added a debug logger class where we log down all the user actions and the notifications/messages so that in case of an unexpected error/crash, users can send the debugger file to us. Users can find it in the debug folder.
