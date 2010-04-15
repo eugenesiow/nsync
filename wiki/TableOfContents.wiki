@@ -1,10 +1,12 @@
 #summary Sidebar Table of Contents
+#labels Featured
   * [nsync nsync] 
-    * [nsyncFeatures Features] 
+    * [nsyncFeatures Features]
+       * [Exclude]
+       * [TrackBack]
     * [nsyncFAQ FAQ] 
     * [Screenshots Screenshots]
-    * [IssueTracker Issue Tracker]
-    * [TrackBack]
+    * [IssueTracker Issue Tracker] 
     * [Getnsync Add a 'get nsync' stamp]
   * [DeveloperGuide Developer Guide] 
     * [ImplementationDetails Implementation Details]
