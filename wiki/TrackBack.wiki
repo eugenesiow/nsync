@@ -2,12 +2,14 @@
 
 = Introduction =
 
-TrackBack is a feature in nsync that ensures you are able to recover your directories to pre-sync state. It ensures that you never(unless there's a natural disaster of course) lose any files! If reliability is what you want, TrackBack seeks to provide this.
+*!TrackBack* is a feature in nsync that ensures you are able to recover your directories to pre-sync state. It ensures that you never(unless there's a natural disaster of course) lose any files! If *reliability* is what you want, TrackBack seeks to provide this.
 
 = How !TrackBack works =
+
+https://nsync.googlecode.com/svn/wiki/images/trackback.png
 
   # Before every sync session, a back up file of the folder pair will be created for restoration purposes.
   # Its a time machine kind of feature that allows you to restore your files/folders of a particular day, e.g.: Restore the folder version as on last Monday before sync was carried out on it.
   # Track Back enables the user to restore the pre sync state of the last 5 saved folder pair versions. It all happens in just 1 click.
-  # The user has the option to either restore only the left folder or the right folder or both
+  # The user has the option to either restore only the left folder or the right folder or both.
   # Track Back is disabled by default. A change in the Settings is required to enable it.
