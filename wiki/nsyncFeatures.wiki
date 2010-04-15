@@ -7,6 +7,10 @@
   * Update functionality (update both folders with the latest versions of documents and files)
   * Diskspace check (checks if there is available space for synchronization)
 
+= Stop Sync =
+  * Allows users to stop a sync process midway between. It leads to an incomplete sync since only few files are synchronized.
+  * The cancel sync appears only when sync is in progress. It’s executed using the same “Sync” button.
+
 = Easy to use, Intuitive, fast and attractive interface =
 
   * Regular folder browsing where you click and select the source/destination folder.
