@@ -1,4 +1,5 @@
 #summary A developer's definitive guide for diving into nsync internals
+#labels Phase-Design,Phase-Requirements
 
 <wiki:toc max_depth="2" />
 
@@ -90,10 +91,68 @@ Since this is a public release, our software which is free and open source could
 We also plan to include more features in our second and last public release, v2.0, which are listed on the next page.
 
 === V2.0 ===
-v2.0 is nsync’s second and the final public release. The fully packaged software is available on our website. It aims our target users and has been designed with a consistent idea of keeping it simple, elegant and easy-to-use.
-The functionalities of various other added features we propose in v2.0 are listed below:
+v2.0 is nsync’s second and the final public release. The fully packaged software is available on our website. It has been designed with the idea of keeping it simple, elegant and easy-to-use.
+The functionalities of other features that were added into v2.0 are listed below:
 
-*>> TO BE CONTINUED <<<*
+==== Log/ summary report file ====
+ * Produces a summary report at the end of the sync operation. nsync itself prompts the user to see the report if there is a renaming conflict else the user has to manually go to the log folder to see the report. The report displays the outcome of the sync operation (successful/unsuccessful) and states the cause of the conflict (if any).
 
+==== TrackBack ====
+ * Before every sync session, a backup file of the folder pair is created for restoration purposes. By Track Back we propose to have a time machine kind of feature that allows you to restore your files/folders of a particular day, e.g.: Restore the folder version as on last Monday before sync was carried out on it.
+ * Track Back enables the user to restore the pre sync state of the last 5 saved folder pair versions. It all happens in just 1 click. Track Back is disabled by default. A change in the Settings is required to enable it.
+ * The user has the option to either restore only the left folder or the right folder or both.
+
+==== Visual Preview ====
+ * The users can click a preview button on the home page (next to Sync button) which shows them the post sync state of either both the folders or just the right folder or just the left folder. The possible actions could be create / delete / rename / change /no change (denoted by blank)
+
+==== Exclude ====
+ * The users can drag and drop files to be excluded from the sync operation.
+ * The users can also select files of specific types to be excluded based on their extension. 
+ * Clicking the close button directs you to the home page where you have to click sync again if you wish to. While clicking the continue button continues with the sync operation thereby excluding the mentioned files.
+ * By default, this feature is disabled. Once the user enables it in the Settings page, this window automatically appears whenever the user clicks the sync button.
+
+==== Stop Sync ====
+ * Allows users to stop a sync process midway. It leads to an incomplete sync since only some files are synchronized.
+ * The cancel sync appears only when sync is in progress. It’s executed using the same “Sync” button.
+
+==== Improved Settings Page ====
+ * Users can choose to enable/disable the Track Back feature
+ * Users can choose to enable/disable the Exclude window
+ * Users can choose the duration for helper/notification window to appear ranging from 0 sec (not at all) to infinity (doesn’t go away on its own – need to be manually closed)
+ * Other options available are :
+  * Clear Meta Data – It clears the metadata file from both the folders (if it exists, that is, if the folders have been synced before)
+  * Reset Settings – It forgets everything (track back versions, left and right folder etc), resets the settings, and brings everything back to the state that nsync was in right after installation.
+  * Open Log Folder – Opens the folder where you can see the log/summary report
+  * Clear Log Folder – Clears the log/summary report from the log folder.
+ * The default settings include – Disabled Track Back, Disabled Exclude, and timer for notification window which has a default value of 5 seconds.
+
+==== Intelligence continued ====
+ * nsync is capable of identifying shortcuts and thanks to its intelligence, it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
+ * If the user chooses to set the duration for helper window to 0 seconds (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
+ * nsync syncs the file on the opposite side in the correct folder hierarchy without bothering the user. Example:
+  * User syncs 2 folders, namely LeftFolder and RightFolder.
+  * User updates a subfolder named A inside LeftFolder and wants to propagate these changes in the subfolder A of RightFolder.
+  * User drags in LeftFolder/A in the left, the right side automatically changes to RightFolder/A, hence only the required folders would be synced again and not the full parent folders.
+ * nsync remembers the removable drive sync – If it’s a thumb drive or any other removable drive, nsync remembers the last synced folder in the removable drive and restores back the folder once the drive is plugged in again under certain conditions (there are no files in the removable drive, only folders exist). Example:
+  * User syncs G:/test1 and C:/Program files
+  * User now syncs G:/test2 and C:/Program files
+  * Now the user syncs some other folder pairs excluding the removable drive G:
+  * At this point, if user drags in G: again, the last synced folder would appear, that is, G:/test2 would appear.
+This only happens under certain conditions (there aren’t any files but just folders in the removable drive)
+Reason: We don’t want to outsmart the user because there could be a case where he actually wants to sync the files present in G:/, so it isn’t appropriate to make G:/test2 appear when actually just G:/ is required.
+ * nsync recognises a removable drive by its serial number, so even if we change the drive name, nsync recognises it and remembers its last synced folder.
+ * Visual Preview remembers the last filter option (Show changes for Both / Left / Right folder) for each folder pair that was synced.
+ * nsync detects folders/files that are locked, shows a helper window message saying which file/folder is locked, and then closes elegantly, instead of crashing like other software. Hence nsync doesn’t crash if %APPDATA%\nsync or any of its subfolder/files are locked. 
+
+==== GUI additions/ improvements ====
+ * Throughout our implementation phase, we have kept our GUI consistent to make it easy for use. Example: Drag and drop wherever needed; consistent use of colours and text.
+ * Use of tooltip makes it more intuitive and self explanatory for the user. The tooltip in Visual Preview displays the full path for each file that is waiting to be synced in the left/right folder.
+ * We believe in a minimalistic design with less cluttered features/buttons, hence we decided to have the “Cancel sync” button in the same place as “Sync button”.
+ * Use of colour coding makes it more readable and clearer to the users. Example: 
+  * In Visual Preview, folders are differentiated from files using colour coding.
+  * In Exclude, colour coding is used to differentiate specific file types (based on their extension), individual files and folders dragged in, and other folders dragged in that are not present in any of the left/right folder.
+
+==== Debug Logger  ====
+ * We have added a debug logger class where we record all the user actions and notifications/messages so that in case of an unexpected error/crash, users can send the debugger file to us. Users can find it in the debug folder.
 
 
