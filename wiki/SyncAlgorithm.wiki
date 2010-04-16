@@ -1,0 +1,25 @@
+#summary How is  the synchronization algorithm like?
+#labels Phase-Implementation
+
+The replica where synchronization initiated from is called the source and the replica it connects to is called the destination. The following diagram outlines the flow of synchronization:
+
+https://nsync.googlecode.com/svn/wiki/images/v2.0%20sync%20algorithm.png
+
+ # The source initiates communication with the destination. The link formed between them is called a synchronization session.
+ # The knowledge (state and change information) stored in the destination’s metadata is passed on to the source.
+ # The source compares the information received to the local item versions to determine the items that the destination does not know about.
+ # After preparing the list of changes required, the source transfers it to the destination.
+ # The destination uses this information to prepare a list of items that the source needs to send. The destination also uses this information to detect if there are any constraint conflicts. (A conflict is detected when the change version in one replica does NOT contain the knowledge of the other. Fundamentally, a conflict occurs if a change is made to the same item on two replicas between synchronization sessions)
+ # Conflicts are resolved by the destination. Our software uses the following resolution policy:
+  * Last-Writer Wins: Based on the assumption that all replicas are trusted to make changes and wall clocks are synchronized, we allow the last writer to win (details below)
+ # After determining which items in the source need to be retrieved, the destination communicates back to the source.
+ # In response to the request, the source prepares the actual data to be transferred to the destination.
+ # The items received are taken and applied at the destination. The knowledge received from the source is added to the destination knowledge.
+
+For bidirectional synchronization, this process will be executed twice; source and destination swapped on the second iteration.
+
+= A rough idea of what we mean by “Last Writer Wins” =
+ # The user syncs the left and right folders.
+ # The user modifies a file in the left folder.
+ # The user modifies the same file in the right folder and sync again
+ # Only the latest changes would be replicated in both the folders (i.e. in this case, only the modified file in the right folder would be propagated to the left folder)
