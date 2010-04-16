@@ -1,4 +1,6 @@
+#summary GUI Graphical User Interface
 #labels Phase-Design
+
 The Graphical User Interface of nsync was one of team14's major focuses and a lot of effort was put into creating a beautiful application for a satisfying user experience.. Careful thought aand consideration is placed into each and every part of the User Interface to create a consistent and enjoyable user experience.
 
 = "Simple is the new awesome." =
