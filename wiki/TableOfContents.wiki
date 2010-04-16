@@ -11,6 +11,7 @@
     * [Getnsync Add a 'get nsync' stamp]
   * [DeveloperGuide Developer Guide] 
     * [ImplementationDetails Implementation Details]
+    * [SyncAlgorithms Synchronization Algorithms]
     * [CodingGuidelines Coding Guidelines]
     * [TortoiseSVN]
   * [Synchronization Synchronization 101]
