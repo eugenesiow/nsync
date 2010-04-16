@@ -1,32 +1,26 @@
 #summary Implementation Details
+#labels Phase-Implementation
 
 = Architecture Diagram =
 
-
-http://nsync.googlecode.com/svn/wiki/images/v0.9%20architecture.jpg
-
+http://nsync.googlecode.com/svn/wiki/images/v2.0%20architecture.png
 
 = Use Case Diagram =
 
-http://nsync.googlecode.com/svn/wiki/images/useCaseDiag_v0.9.jpg
-
+http://nsync.googlecode.com/svn/wiki/images/v2.0%20use%20case%20diagram.png
 
 = Domain Model =
 
-http://nsync.googlecode.com/svn/wiki/images/DomailModel.jpg
-
+http://nsync.googlecode.com/svn/wiki/images/v2.0%20domain%20model.png
 
 = Activity Diagram =
 
-http://nsync.googlecode.com/svn/wiki/images/ActivityDiag1.jpg
-http://nsync.googlecode.com/svn/wiki/images/ActivityDiag2.jpg
-
+http://nsync.googlecode.com/svn/wiki/images/v2.0%20activity%20diagram%201.png
 
 = Sequence Diagram =
 
-http://nsync.googlecode.com/svn/wiki/images/SequenceDiagram.jpg
-
+http://nsync.googlecode.com/svn/wiki/images/v2.0%20sequence%20diagram.png
 
 = Class Diagram =
 
-http://nsync.googlecode.com/svn/wiki/images/ClassDiagram.jpg
+http://nsync.googlecode.com/svn/wiki/images/ClassDiagram_V2.0.png
