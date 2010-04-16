@@ -17,11 +17,11 @@ https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
   * Regular folder browsing where you click and select the source/destination folder.
   * Apart from the regular folder browsing, nsync also comes with a Drag and Drop feature (Folders can be dragged from anywhere in Windows into nsync and it is capable of recognizing them)
   * To minimise the untidiness and make the interface look smooth and clean, nsync automatically displays the sync button only when both source and destination folders have been chosen.
-  * Folder icon changes accordingly if the selected folders are missing/do not exist. Even on driving in a removable drive or selecting a folder within a removable drive using the folder browsing technique, the folder icon changes to that of a removable drive.
+  * Folder icon changes accordingly if the selected folders are missing/do not exist. Even on navigating with a removable drive or selecting a folder within a removable drive using the folder browsing technique, the folder icon changes to that of a removable drive.
   * To keep track of the sync operation, we have 3 indication bars at the bottom of the interface – status bar (displays status messages like preparing folders/syncing folders/sync completed), progress bar and percentage bar (shows sync progress in percentage)
-  * The progress bar is so designed that it fills up the team 14 logo orange as sync proceeds. It makes it more appealing to the eye thereby conveying the information to the user about a sync operation’s progress.
-  * A slider window to access different pages mainly Settings, Main Window and Track Back (to be included in the next release). When we move the mouse over the left and right side of the interface, a small button appears clicking on which makes you slide to the next page in line up. On mouse click and hold, the image of the button becomes depressed.
-  * When the user reaches the leftmost/rightmost page of nsync, the left/right slider bar won’t appear at all respectively.
+  * The progress bar is so designed in such a way that the team14 logo will fill up with  orange colour as the sync proceeds. It makes it more appealing to the eye thereby conveying the information to the user about a sync operation’s progress.
+  * A slider window to access different pages mainly Settings, Main Window and Track Back (to be included in the next release). When we move the mouse over the left and right side of the interface, a small button appears. Clicking on it allows you to slide to the next page in the line up. On mouse click and hold, the image of the button becomes depressed.
+  * When the user reaches the leftmost/rightmost page of nsync, the left/right slider bar won’t appear at all.
   * Another way to navigate through the interface pages is by the use of dots (Navidots). These appear at the top part of the interface and clicking on them, you can directly jump to any page out of Settings, Main Window and Track Back (to be included in the next release).
   * Last 5 successfully synced folders are saved in a MRU (Most Recently Used) list which can be accessed by moving the mouse over the folder space. The MRU list is intelligent enough to save the synced folder pairs in the Settings.xml file so that in the case of multiple syncs at one go (to be implemented in the next release), all folder pairs would be saved. Currently, multiple sync is not included, hence the software doesn’t allow the user to add another set of folders in the queue while the current sync is going on.
   * The MRU list also takes care of not having any duplicate folder pairs in the last 5 synced pairs.
@@ -38,7 +38,7 @@ https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
 
 = nsync remembers what you sync =
 https://nsync.googlecode.com/svn/wiki/images/MRU.JPG
-  * Even after being closed and then opened again, nsync remembers your last synced folders (the source and the destination folder) and up to 5 of the most recently synced folders.
+  * Even after exiting nsync and executing it again, nsync remembers your last synced folders (the source and the destination folder) and up to 5 of the most recently synced folders.
 
 = sync using a removable drive =
 
@@ -46,12 +46,12 @@ https://nsync.googlecode.com/svn/wiki/images/MRU.JPG
 
 = Intelligence =
 
-  * nsync’s differentiating factor among the other synchronization tools is its intelligence which makes it stand apart. There exists an in built powerful help function to provide help and timely information throughout the software. Beats reading a 1000 page help file!
+  * nsync’s differentiating factor among the other synchronization tools is its intelligence. There exists an in built powerful help function that provides help and timely information throughout the software. Beats reading a 1000 page help file!
   * Makes intelligent decisions about folder paths as they are dragged in. E.g. In the case where a folder to be synced appears in the source directory but not in the destination directory and the destination directory is a drive, nsync automatically creates the same folder name in the destination directory.
   * When left folder is a subfolder of right folder or vice versa, it does not allow the sync process to continue so as to prevent an infinite loop.
   * It also alerts the user in the case of an operation being performed incorrectly. Eg: If a user is trying to sync the same folders, the help guide pops up an unobtrusive message window saying “The source and destination folders are the same”
-  * It allows you to continue with your other work while the sync process is being carried and a notification saying “sync done” pops up in front of your active window as soon as the sync is done.
-  * It saves you time in identifying the already synchronized folders and alerts if they are up to date.
+  * It allows you to continue with your other work while the sync process is being carried out and a notification saying “sync done” pops up in front of your active window as soon as the sync is done.
+  * It saves you time in identifying the already synchronized folders and alerts you if they are not up to date.
   * It checks and reports if one or more of the selected folders has been moved/does not exist by displaying an appropriate message.
   * nsync is capable of identifying shortcuts and thanks to its intelligence, that it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
   * If the user chooses to set the duration for helper window to be 0 sec (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
