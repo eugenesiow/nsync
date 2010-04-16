@@ -9,8 +9,8 @@
 
 = Stop Sync =
 https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
-  * Allows users to stop a sync process midway between. It leads to an incomplete sync since only few files are synchronized.
-  * The cancel sync appears only when sync is in progress. It’s executed using the same “Sync” button.
+  * Allows users to stop a sync process midway. It leads to an incomplete sync since only some files are synchronized.
+  * The cancel sync appears only when the sync is in progress. It’s executed using the same “Sync” button.
 
 = Easy to use, Intuitive, fast and attractive interface =
 
@@ -29,7 +29,7 @@ https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
   * Tool Tip feature - It displays the functionality of each and every button as you scroll the mouse over it.
   * Long folder path names are truncated automatically to avoid giving a messy look in the MRU, instead all folder paths would have a tooltip displaying their full folder path.
   * The helper/notification window resets its position according to how we drag the main window. It either fits itself at the top or the bottom of the interface window.
-  * Use of tooltip makes it more intuitive and self explanatory for the user. The tooltip in Visual Preview displays the full path for each file waiting to be synced in the left/right folder.
+  * Use of tooltip makes it more intuitive and self explanatory for the user. The tooltip in Visual Preview displays the full path for each file that is waiting to be synced in the left/right folder.
   * We believe in a minimalistic design with less cluttered features/buttons, hence we decided to have the “Cancel sync” button in the same place as “Sync button”.
   * Use of colour coding makes it more readable and clearer to the users. Example:
    # In Visual Preview, folders are differentiated from files using colour coding. 
@@ -53,9 +53,9 @@ https://nsync.googlecode.com/svn/wiki/images/MRU.JPG
   * It allows you to continue with your other work while the sync process is being carried out and a notification saying “sync done” pops up in front of your active window as soon as the sync is done.
   * It saves you time in identifying the already synchronized folders and alerts you the same with a notification.
   * It checks and reports if one or more of the selected folders have been moved/do not exist by displaying an appropriate message.
-  * nsync is capable of identifying shortcuts and thanks to its intelligence, that it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
-  * If the user chooses to set the duration for helper window to be 0 sec (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
-  * nsync syncs the file on the opposite side in the correct folder hierarchy without even bothering the user to think or worry about it.
+  * nsync is capable of identifying shortcuts and thanks to its intelligence, it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
+  * If the user chooses to set the duration for the helper window to 0 sec (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
+  * nsync syncs the file on the opposite side in the correct folder hierarchy without bothering the user to think or worry about it.
 Example:
 <br>
 - User syncs 2 folders, namely Left Folder and Right Folder 
@@ -76,7 +76,7 @@ Example:
 - At this point, if user drags in G: again, the last synced folder would appear, that is, G:/test2 would appear.
 This only happens under certain conditions (there aren’t any files but just folders in the removable drive) 
 <br> 
-Reason: We don’t want to outsmart the user because there could be a case when he actually wants to sync the files present in G:/, so it isn’t appropriate to make G:/test2 appear when actually just G:/ is required.
+Reason: We don’t want to outsmart the user because there could be a case where he actually wants to sync the files present in G:/, so it isn’t appropriate to make G:/test2 appear when actually just G:/ is required.
   * nsync recognises a removable drive by its serial number, so even if we change the drive name, nsync recognises it and remembers its last synced folder.
   * Visual Preview remembers the last filter option (Show changes for Both / Left / Right folder) for each folder pair that was synced.
   * nsync detects folders/files that are locked, shows a helper window message saying which file/folder is locked, and then closes elegantly, instead of crashing like other software. Hence nsync doesn’t crash if %APPDATA%\nsync or any of its subfolder/files are locked.
@@ -90,9 +90,10 @@ Reason: We don’t want to outsmart the user because there could be a case when 
   * The users can click a preview button on the home page (next to Sync button) which shows them the post sync state of either both the folders or just the right folder or just the left folder. The possible actions could be create / delete / rename / change /no change (denoted by blank)
 
 = Exclude =
-  * The users can drag and drop files to be excluded from the sync operation.
-  * The users can also select files of specific types to be excluded based on their extension.  Clicking the close button directs you to the home page where you have to click sync again if you wish to. While clicking the continue button continues with the sync operation thereby excluding the mentioned files.
-  * By default, this feature is disabled. Once the user enables it in the Settings page, this window automatically comes whenever the user clicks the sync button.
+  * The users can drag and drop files that are to be excluded from the sync operation.
+  * The users can also select files of specific types to be excluded based on their extension.
+  * Clicking the close button directs you to the home page where you have to click sync again if you wish to resynchronize. Clicking on the continue button resumes the sync operation while excluding the selected files.
+  * By default, this feature is disabled. Once the user enables it in the Settings page, this window automatically appears whenever the user clicks the sync button.
 
 = Settings Page =
   * Allows the users to enable/disable features and change settings according to their wish. For example, users can choose to have the helper window (notifications) on/off.
@@ -102,7 +103,7 @@ Reason: We don’t want to outsmart the user because there could be a case when 
   * Users can choose the duration for helper/notification window to appear ranging from 0 sec (not at all) to infinity (doesn’t go away on its own – need to be manually closed)
   * Other options available are :
     # Clear Meta Data – It clears the metadata file from both the folders (if it exists, that is, if the folders have been synced before)
-    # Reset Settings – It forgets everything (track back versions, left and right folder etc), resets the settings, and brings everything to the default option equivalent to the initial installation of nsync
+    # Reset Settings – It forgets everything (track back versions, left and right folder etc), resets the settings, and brings everything back to the state in which nsync was right after installation.
     # Open Log Folder – Opens the folder where you can see the log/summary report
     # Clear Log Folder – Clears the log/summary report from the log folder.
   * The default settings include – Disabled Track Back, Disabled Exclude, and timer for notification window set to 5 sec.
@@ -111,4 +112,4 @@ Reason: We don’t want to outsmart the user because there could be a case when 
   * Produces a summary report at the end of the sync operation. nsync itself prompts the user to see the report if there is a renaming conflict else the user has to manually go to the log folder to see the report. The report displays the outcome of the sync operation (successful/unsuccessful) and states the cause of the conflict (if any).
 
 = Debug Logger =
-  * We have added a debug logger class where we log down all the user actions and the notifications/messages so that in case of an unexpected error/crash, users can send the debugger file to us. Users can find it in the debug folder.
+  * We have added a debug logger class where we record all the user actions and the notifications/messages so that in case of an unexpected error/crash, users can send the debugger file to us. Users can find it in the debug folder.
