@@ -7,7 +7,7 @@ https://nsync.googlecode.com/svn/wiki/images/v2.0%20sync%20algorithm.png
 
  # The source initiates communication with the destination. The link formed between them is called a synchronization session.
  # The knowledge (state and change information) stored in the destination’s metadata is passed on to the source.
- # The source compares the information received to the local item versions to determine the items that the destination does not know about.
+ # The source compares the information received to the versions of its local items in order to determine the items that the destination does not have information on.
  # After preparing the list of changes required, the source transfers it to the destination.
  # The destination uses this information to prepare a list of items that the source needs to send. The destination also uses this information to detect if there are any constraint conflicts. (A conflict is detected when the change version in one replica does NOT contain the knowledge of the other. Fundamentally, a conflict occurs if a change is made to the same item on two replicas between synchronization sessions)
  # Conflicts are resolved by the destination. Our software uses the following resolution policy:
