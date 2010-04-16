@@ -8,6 +8,7 @@
   * Diskspace check (checks if there is available space for synchronization)
 
 = Stop Sync =
+https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
   * Allows users to stop a sync process midway between. It leads to an incomplete sync since only few files are synchronized.
   * The cancel sync appears only when sync is in progress. It’s executed using the same “Sync” button.
 
@@ -36,8 +37,8 @@
 
 
 = nsync remembers what you sync =
-
-  * Even after being closed and then opened again, nsync remembers your last synced folders (the source and the destination folder)
+https://nsync.googlecode.com/svn/wiki/images/MRU.JPG
+  * Even after being closed and then opened again, nsync remembers your last synced folders (the source and the destination folder) and up to 5 of the most recently synced folders.
 
 = sync using a removable drive =
 
