@@ -24,8 +24,8 @@ https://nsync.googlecode.com/svn/wiki/images/cancelsync.png
   * When the user reaches the leftmost/rightmost page of nsync, the left/right slider bar won’t appear at all.
   * Another way to navigate through the interface pages is by the use of dots (Navidots). These appear at the top part of the interface and clicking on them, you can directly jump to any page out of Settings, Main Window and Track Back (to be included in the next release).
   * Last 5 successfully synced folders are saved in a MRU (Most Recently Used) list which can be accessed by moving the mouse over the folder space. The MRU list is intelligent enough to save the synced folder pairs in the Settings.xml file so that in the case of multiple syncs at one go (to be implemented in the next release), all folder pairs would be saved. Currently, multiple sync is not included, hence the software doesn’t allow the user to add another set of folders in the queue while the current sync is going on.
-  * The MRU list also takes care of not having any duplicate folder pairs in the last 5 synced pairs.
-  * To avoid any hang up or crashing and to prevent the user from committing any mistake unknowingly, the interface disables the scrolling buttons, the Navidots and the MRU list box while syncing. Also, you can minimize or move the main window/interface while syncing but cannot close the application.
+  * The MRU list also takes care of preventing any duplicate folder pairs in the last 5 synced pairs.
+  * The interface disables the scrolling buttons, the Navidots and the MRU list box while syncing to avoid any hang up or crashing and to prevent the user from committing any mistake unknowingly. Also, you can minimize or move the main window/interface while syncing but cannot close the application.
   * Tool Tip feature - It displays the functionality of each and every button as you scroll the mouse over it.
   * Long folder path names are truncated automatically to avoid giving a messy look in the MRU, instead all folder paths would have a tooltip displaying their full folder path.
   * The helper/notification window resets its position according to how we drag the main window. It either fits itself at the top or the bottom of the interface window.
@@ -51,8 +51,8 @@ https://nsync.googlecode.com/svn/wiki/images/MRU.JPG
   * When left folder is a subfolder of right folder or vice versa, it does not allow the sync process to continue so as to prevent an infinite loop.
   * It also alerts the user in the case of an operation being performed incorrectly. Eg: If a user is trying to sync the same folders, the help guide pops up an unobtrusive message window saying “The source and destination folders are the same”
   * It allows you to continue with your other work while the sync process is being carried out and a notification saying “sync done” pops up in front of your active window as soon as the sync is done.
-  * It saves you time in identifying the already synchronized folders and alerts you if they are not up to date.
-  * It checks and reports if one or more of the selected folders has been moved/does not exist by displaying an appropriate message.
+  * It saves you time in identifying the already synchronized folders and alerts you the same with a notification.
+  * It checks and reports if one or more of the selected folders have been moved/do not exist by displaying an appropriate message.
   * nsync is capable of identifying shortcuts and thanks to its intelligence, that it can link to the actual folder path (to which the shortcuts points). So whenever a user drags in a shortcut, the folder that the shortcut points to appears instead.
   * If the user chooses to set the duration for helper window to be 0 sec (does not show at all) in the settings page, nsync still shows few notifications which it considers to be really crucial and important for alerting the user like “Sync Done”, “Folder restored”, “Insufficient Disk Space”, “Folder do not exist”, “Similar folder”, “Subfolder of the other”.
   * nsync syncs the file on the opposite side in the correct folder hierarchy without even bothering the user to think or worry about it.
