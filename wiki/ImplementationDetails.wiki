@@ -23,4 +23,4 @@ http://nsync.googlecode.com/svn/wiki/images/v2.0%20sequence%20diagram.png
 
 = Class Diagram =
 
-http://nsync.googlecode.com/svn/wiki/images/ClassDiagram_V2.0.png
+Click [http://nsync.googlecode.com/svn/wiki/images/ClassDiagram_V2.0.png here] to view the image in full size.
