@@ -154,5 +154,3 @@ Reason: We don’t want to outsmart the user because there could be a case where
 
 ==== Debug Logger  ====
  * We have added a debug logger class where we record all the user actions and notifications/messages so that in case of an unexpected error/crash, users can send the debugger file to us. Users can find it in the debug folder.
-
-
