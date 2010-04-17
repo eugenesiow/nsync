@@ -5,7 +5,7 @@ The replica where synchronization initiated from is called the source and the re
 
 https://nsync.googlecode.com/svn/wiki/images/v2.0%20sync%20algorithm.png
 
-_Image credits: [http://msdn.microsoft.com/en-us/sync/bb821992.aspx Microsoft MSDN]_
+_Image credits: [http://msdn.microsoft.com/en-us/sync/bb821992.aspx Microsoft Sync Framework Developer Center]_
 
  # The source initiates communication with the destination. The link formed between them is called a synchronization session.
  # The knowledge (state and change information) stored in the destination’s metadata is passed on to the source.
