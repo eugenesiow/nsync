@@ -30,7 +30,7 @@ Here we present to you not just our product, but our vision too. We hope to make
  * *Fast*
   * Synchronization has to be fast.
  * *Stick to the above principles!* 
-  *We are engineers, designers and programmers, but above all, we’re users too. Put the user first.
+  * We are engineers, designers and programmers, but above all, we’re users too. Put the user first.
 
 ----
 
